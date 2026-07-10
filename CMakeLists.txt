@@ -18,8 +18,8 @@ set(CMAKE_CXX_STANDARD 17)
 pico_sdk_init()
 
 add_executable(joyfon
-        main.c
-        usb_descriptors.c
+        src/main.c
+        src/usb_descriptors.c
         )
 
 # Make sure TinyUSB can find tusb_config.h
