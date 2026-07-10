@@ -215,12 +215,12 @@ static void led_task(void)
   if ( blink_interval_ms == 0 )
   {
     bool any = false;
-#if 0
+
     for ( size_t i = 0; i < sizeof(k_button_pins) / sizeof(k_button_pins[0]); i++ )
     {
       if ( button_pressed(k_button_pins[i]) ) { any = true; break; }
     }
-#endif
+
     gpio_put(PIN_LED, any);
     return;
   }
