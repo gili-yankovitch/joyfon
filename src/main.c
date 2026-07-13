@@ -13,6 +13,10 @@
  *   GPIO3  -> D-pad LEFT
  *   GPIO4  -> B
  *   GPIO5  -> A
+ *   GPIO20 -> X
+ *   GPIO21 -> Y
+ *   GPIO22 -> SR (right shoulder)
+ *   GPIO25 -> SL (left shoulder)
  *   GPIO23 -> START
  *   GPIO24 -> SELECT
  *   GPIO8  -> status LED (active-high)
@@ -35,6 +39,10 @@
 #define PIN_LEFT    3u
 #define PIN_B       4u
 #define PIN_A       5u
+#define PIN_X       20u
+#define PIN_Y       21u
+#define PIN_SR      22u
+#define PIN_SL      25u
 #define PIN_START   23u
 #define PIN_SELECT  24u
 
@@ -43,7 +51,7 @@
 // All face/dpad buttons used by the controller, so we can init them in a loop.
 static const uint8_t k_button_pins[] = {
   PIN_DOWN, PIN_RIGHT, PIN_UP, PIN_LEFT,
-  PIN_B, PIN_A, PIN_START, PIN_SELECT,
+  PIN_B, PIN_A, PIN_X, PIN_Y, PIN_SR, PIN_SL, PIN_START, PIN_SELECT,
 };
 
 // Buttons are active-low (pressed == logic 0 thanks to the pull-up).
@@ -143,8 +151,12 @@ static void build_report(hid_gamepad_report_t *report)
       button_pressed(PIN_RIGHT));
 
   uint32_t buttons = 0;
-  if (button_pressed(PIN_A))      buttons |= GAMEPAD_BUTTON_A; // GAMEPAD_BUTTON_A;
-  if (button_pressed(PIN_B))      buttons |= GAMEPAD_BUTTON_B; // GAMEPAD_BUTTON_B;
+  if (button_pressed(PIN_A))      buttons |= GAMEPAD_BUTTON_A;
+  if (button_pressed(PIN_B))      buttons |= GAMEPAD_BUTTON_B;
+  if (button_pressed(PIN_X))      buttons |= GAMEPAD_BUTTON_X;
+  if (button_pressed(PIN_Y))      buttons |= GAMEPAD_BUTTON_Y;
+  if (button_pressed(PIN_SR))     buttons |= GAMEPAD_BUTTON_TR; // right shoulder
+  if (button_pressed(PIN_SL))     buttons |= GAMEPAD_BUTTON_TL; // left shoulder
   if (button_pressed(PIN_START))  buttons |= GAMEPAD_BUTTON_START;
   if (button_pressed(PIN_SELECT)) buttons |= GAMEPAD_BUTTON_SELECT;
   report->buttons = buttons;
