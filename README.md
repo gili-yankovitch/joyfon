@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/front-transparent.png" alt="Joyfon controller" width="420">
+  <img src="images/JoyFon-Dark-Hero.gif" alt="Joyfon controller" width="420">
 </p>
 
 # Joyfon
