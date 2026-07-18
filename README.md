@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="images/JoyFon-Dark-Hero.gif" alt="Joyfon controller" width="420">
-</p>
-
 # Joyfon
 
 A USB HID game controller for the Raspberry Pi Pico (RP2040 / RP2350).
@@ -10,6 +6,10 @@ Joyfon enumerates as a **standard USB HID gamepad**, so phones (Android), PCs,
 and emulators recognize it with no driver or app. The button layout mimics a
 Game Boy Color: a 4-way D-pad plus `A`, `B`, `X`, `Y`, shoulder buttons
 (`SR`/`SL`), and `START` / `SELECT`.
+
+<p align="center">
+  <img src="images/JoyFon-Dark-Hero.gif" alt="Joyfon controller" width="420">
+</p>
 
 ## Enclosure & PCB
 
