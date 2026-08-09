@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joyfon — a USB HID gamepad for the Raspberry Pi Pico</title>
+<meta name="description" content="Joyfon is an open-hardware, Game Boy-shaped USB HID game controller built on the Raspberry Pi Pico. No driver, no app, no pairing. Firmware, PCB and STLs included.">
+<meta name="theme-color" content="#07030d">
+
+<meta property="og:title" content="Joyfon — a USB HID gamepad for the Raspberry Pi Pico">
+<meta property="og:description" content="Game Boy-shaped, open hardware, plug-and-play on Android. Firmware, KiCad PCB and printable case.">
+<meta property="og:image" content="images/front.png">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="images/front-transparent.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Space+Grotesk:wght@400;500;700&family=Tourney:ital,wght@0,600;0,800;1,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<div class="scanlines" aria-hidden="true"></div>
+
+<header class="topbar">
+  <a class="topbar__mark" href="#top">JOYFON</a>
+  <nav class="topbar__nav" aria-label="Sections">
+    <a href="#hardware">Hardware</a>
+    <a href="#files">What's inside</a>
+  </nav>
+  <a class="topbar__repo" href="https://github.com/gili-yankovitch/joyfon">Source ↗</a>
+</header>
+
+<main id="top">
+
+  <!-- ─────────────────────────  HERO  ───────────────────────── -->
+  <section class="hero">
+    <div class="hero__copy">
+      <p class="eyebrow">Open source hardware · RP2040 / RP2350 · USB HID</p>
+      <h1 class="wordmark" aria-label="Joyfon">
+        <span class="wordmark__glow" aria-hidden="true">JOYFON</span>
+        <span class="wordmark__face">JOYFON</span>
+      </h1>
+      <p class="tagline">Pocket Handheld Controller</p>
+      <p class="hero__lede">
+        Tired of fighting touch controls in your handheld emulator? Miss the tactile click of
+        your old consoles? The feeling is mutual. Joyfon is a physical controller for your phone
+        that brings all of that back, plus tons of nostalgia — and because
+        <a href="#files">the hardware, the firmware and the printed shell are all open</a>,
+        you can mod every one of them to your own taste and pure retro enjoyment.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--solid" href="https://github.com/gili-yankovitch/joyfon">
+          <svg class="btn__gh" viewBox="0 0 16 16" width="17" height="17" aria-hidden="true" focusable="false">
+            <path fill="currentColor" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+          </svg>
+          GitHub repo
+        </a>
+        <a class="btn btn--ghost" href="#hardware">See the hardware</a>
+      </div>
+    </div>
+
+    <figure class="crt">
+      <div class="crt__screen">
+        <img id="hero-media" src="images/front-transparent.png" alt="The Joyfon controller clipped to the bottom of a phone." width="670" height="720">
+      </div>
+      <figcaption class="crt__label"><span class="dot"></span> Joyfon v0.3 · printed case, hinged phone clamp</figcaption>
+    </figure>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>THUMBWAVE</span><span>PIXELSNAX</span><span>BLIPCORE</span><span>CARTRIDGE FEVER</span>
+      <span>JOYFONIC</span><span>SPRITEJUICE</span><span>MEGATHUMB DELUXE</span><span>CHIPTUNE OVERDRIVE</span>
+      <span>SAVE-STATE SUNRISE</span><span>TURBO GRIP</span><span>POCKETRON 64</span><span>D-PAD DYNAMO</span>
+      <span>BATTERY BACKUP</span><span>HI-SCORE HAZE</span><span>CONTINUE? 09</span><span>PHONEBOY ADVANCE</span>
+      <span>THUMBWAVE</span><span>PIXELSNAX</span><span>BLIPCORE</span><span>CARTRIDGE FEVER</span>
+      <span>JOYFONIC</span><span>SPRITEJUICE</span><span>MEGATHUMB DELUXE</span><span>CHIPTUNE OVERDRIVE</span>
+      <span>SAVE-STATE SUNRISE</span><span>TURBO GRIP</span><span>POCKETRON 64</span><span>D-PAD DYNAMO</span>
+      <span>BATTERY BACKUP</span><span>HI-SCORE HAZE</span><span>CONTINUE? 09</span><span>PHONEBOY ADVANCE</span>
+    </div>
+  </div>
+
+  <!-- ────────────────────────  HARDWARE  ────────────────────── -->
+  <section class="section" id="hardware">
+    <header class="section__head">
+      <p class="eyebrow">Hardware</p>
+      <h2 class="h2">A printed shell and one purple board.</h2>
+      <p class="section__lede">
+        The case is modelled in Onshape and prints in twelve parts — body, back plate, hinge, USB cover
+        and a cap for every button. The PCB is a single-sided KiCad design carrying twelve tactile
+        switches and the Pico.
+      </p>
+    </header>
+
+    <div class="plates">
+      <figure class="plate">
+        <button class="plate__btn" type="button">
+        <img src="images/front.png" alt="CAD render of the Joyfon case, front three-quarter view, showing the D-pad, four face buttons and two slim Start/Select keys." loading="lazy" width="765" height="957">
+        </button>
+        <figcaption><span class="plate__idx">Case</span> front</figcaption>
+      </figure>
+      <figure class="plate">
+        <button class="plate__btn" type="button">
+        <img src="images/back.png" alt="CAD render of the Joyfon case from behind, showing the back plate, the USB-C passthrough and the hinged phone clamp." loading="lazy" width="765" height="957">
+        </button>
+        <figcaption><span class="plate__idx">Case</span> back</figcaption>
+      </figure>
+      <figure class="plate">
+        <button class="plate__btn" type="button">
+        <img src="images/pcb-front.png" alt="Render of the purple Joyfon PCB, front side, with silkscreen labels for every switch and a wizard mascot." loading="lazy" width="632" height="565">
+        </button>
+        <figcaption><span class="plate__idx">PCB</span> front</figcaption>
+      </figure>
+      <figure class="plate">
+        <button class="plate__btn" type="button">
+        <img src="images/pcb-back.png" alt="Render of the Joyfon PCB, back side, showing the routed traces." loading="lazy" width="632" height="565">
+        </button>
+        <figcaption><span class="plate__idx">PCB</span> back</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────  FILES  ──────────────────────── -->
+  <section class="section section--files" id="files">
+    <header class="section__head">
+      <p class="eyebrow">What's in the box</p>
+      <h2 class="h2">Everything, actually open.</h2>
+    </header>
+
+    <div class="files">
+      <div class="file">
+        <p class="file__kind">Board</p>
+        <p class="file__name">Controller PCB</p>
+        <p class="file__desc">Carries the twelve tactile switches, the D-pad and the Pico.</p>
+      </div>
+      <div class="file">
+        <p class="file__kind">Board</p>
+        <p class="file__name">Male USB PCB</p>
+        <p class="file__desc">The plug that reaches the phone's port, so nothing dangles off the side.</p>
+      </div>
+      <div class="file">
+        <p class="file__kind">Interconnect</p>
+        <p class="file__name">Flex cable</p>
+        <p class="file__desc">Links the two boards across the hinge and keeps folding with it.</p>
+      </div>
+      <div class="file">
+        <p class="file__kind">Mechanism</p>
+        <p class="file__name">Hinge design</p>
+        <p class="file__desc">Clamps the controller onto the handset and swings out of the way when you're done.</p>
+      </div>
+      <div class="file">
+        <p class="file__kind">Enclosure</p>
+        <p class="file__name">Fully customizable shell</p>
+        <p class="file__desc">Printed in twelve parts, down to every button cap. Resize it for your own phone.</p>
+      </div>
+      <a class="file file--accent" href="https://cad.onshape.com/documents/5b058211584da6ba94a5f3a2/w/7946df008143afeea2af8019/e/bb1aadbdb91d94f271c1447f?page=2&amp;email=giliy%40nyxsecurity.net&amp;renderMode=0&amp;uiState=6a5551800e11d12ad61d855e">
+        <p class="file__kind">CAD</p>
+        <p class="file__name">Open it in Onshape ↗</p>
+        <p class="file__desc">The live model. Fork it and mod the shell instead of settling for this one.</p>
+      </a>
+    </div>
+  </section>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image" hidden>
+  <button class="lightbox__close" type="button" aria-label="Close">✕</button>
+  <figure class="lightbox__figure">
+    <img id="lightbox-img" src="" alt="">
+    <figcaption id="lightbox-cap"></figcaption>
+  </figure>
+</div>
+
+<footer class="footer">
+  <div class="footer__horizon" aria-hidden="true"></div>
+
+  <div class="footer__inner">
+
+    <div class="oshw">
+      <svg class="oshw__gear" viewBox="0 0 128 128" role="img" aria-labelledby="oshw-title">
+        <title id="oshw-title">Open source hardware</title>
+        <g fill="none" stroke="currentColor" stroke-width="15" stroke-linecap="butt">
+          <path d="M83.39 98.98 A 40 40 0 1 1 103.51 70.26"/>
+        </g>
+        <g fill="currentColor">
+          <path d="M71.35 110.42 L70.68 122.62 L57.32 122.62 L56.65 110.42 Z"/>
+          <path d="M36.37 102.02 L27.27 110.17 L17.83 100.73 L25.98 91.63 Z"/>
+          <path d="M17.58 71.35 L5.38 70.68 L5.38 57.32 L17.58 56.65 Z"/>
+          <path d="M25.98 36.37 L17.83 27.27 L27.27 17.83 L36.37 25.98 Z"/>
+          <path d="M56.65 17.58 L57.32 5.38 L70.68 5.38 L71.35 17.58 Z"/>
+          <path d="M91.63 25.98 L100.73 17.83 L110.17 27.27 L102.02 36.37 Z"/>
+        </g>
+      </svg>
+
+      <div class="oshw__copy">
+        <p class="oshw__title">Open source hardware</p>
+        <p class="oshw__text">
+          Nothing here is a black box. The firmware, the KiCad schematic and board, and the CAD for
+          every printed part live in the same repository — read them, fork them, cut a version that
+          fits your phone instead of this one.
+        </p>
+        <p class="oshw__clone"><code>git clone https://github.com/gili-yankovitch/joyfon</code></p>
+      </div>
+    </div>
+
+    <div class="footer__end">
+      <p class="footer__mark">JOYFON</p>
+      <nav class="footer__links" aria-label="Repository links">
+        <a href="https://github.com/gili-yankovitch/joyfon">Repository</a>
+        <a href="https://github.com/gili-yankovitch/joyfon/issues">Issues</a>
+        <a href="https://github.com/gili-yankovitch/joyfon/tree/main/hw/controller/PhoneController.pdf">Schematic PDF</a>
+        <a href="https://github.com/gili-yankovitch/joyfon/tree/main/stl">STLs</a>
+        <a href="https://github.com/gili-yankovitch/joyfon/blob/main/LICENSE">MIT license</a>
+      </nav>
+      <p class="footer__line">Built by <a href="https://github.com/gili-yankovitch">Gili Yankovitch</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>

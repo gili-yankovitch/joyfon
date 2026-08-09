@@ -1,0 +1,67 @@
+<!-- Joyfon build section, lifted out of index.html. Paste back before the
+     "What's in the box" section to restore it; styles for .steps/.step/
+     .caution live at the bottom of assets/site.css. -->
+
+<!-- ─────────────────────────  BUILD  ──────────────────────── -->
+  <section class="section" id="build">
+    <header class="section__head">
+      <p class="eyebrow">Build</p>
+      <h2 class="h2">From clone to gamepad.</h2>
+      <p class="section__lede">
+        The order matters — flash the Pico before it disappears inside the shell.
+      </p>
+    </header>
+
+    <ol class="steps">
+      <li class="step">
+        <p class="step__num">01</p>
+        <div class="step__body">
+          <h3 class="step__title">Build the firmware</h3>
+          <p>Needs CMake 3.13+, the <code>arm-none-eabi</code> GCC toolchain, and the
+             <a href="https://github.com/raspberrypi/pico-sdk">pico-sdk</a> with its TinyUSB submodule
+             initialised. <code>CMakeLists.txt</code> looks for the SDK at <code>../pico-sdk</code>.</p>
+<pre><code>mkdir build &amp;&amp; cd build
+cmake ..            <span class="c"># or -DPICO_SDK_PATH=/path/to/pico-sdk</span>
+make -j</code></pre>
+          <p>Targeting a Pico 2 / RP2350? Configure with <code>cmake -DPICO_BOARD=pico2 ..</code>.
+             Either way you get <code>build/joyfon.uf2</code>.</p>
+        </div>
+      </li>
+
+      <li class="step">
+        <p class="step__num">02</p>
+        <div class="step__body">
+          <h3 class="step__title">Flash it</h3>
+          <p>Hold <strong>BOOTSEL</strong> while plugging the Pico in. It mounts as a drive called
+             <code>RPI-RP2</code>. Copy <code>joyfon.uf2</code> onto it; the board reboots and comes back
+             as <em>Joyfon Game Controller</em>.</p>
+        </div>
+      </li>
+
+      <li class="step">
+        <p class="step__num">03</p>
+        <div class="step__body">
+          <h3 class="step__title">Print and wire the shell</h3>
+          <p>Print the twelve STLs in <code>stl/</code>, then wire each switch between its GPIO and
+             <code>GND</code> per the pinout. The status LED on GPIO8 is active-high through a
+             current-limiting resistor.</p>
+        </div>
+      </li>
+
+      <li class="step">
+        <p class="step__num">04</p>
+        <div class="step__body">
+          <h3 class="step__title">Plug it into a phone</h3>
+          <p>Over USB-OTG or straight into USB-C, it shows up as a connected gamepad — ready for
+             emulators or anything that speaks HID.</p>
+        </div>
+      </li>
+    </ol>
+
+    <p class="caution">
+      <span class="caution__tag">Before you ship any</span>
+      Joyfon uses the TinyUSB test IDs <code>0xCAFE</code> / <code>0x4007</code>. Swap in a VID/PID you
+      own before distributing hardware. The RP2040-E5 enumeration erratum fix is enabled in
+      <code>CMakeLists.txt</code>, which reserves GPIO15 on RP2040 boards.
+    </p>
+  </section>

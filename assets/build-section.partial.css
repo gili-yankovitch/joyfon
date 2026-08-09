@@ -1,0 +1,73 @@
+/* Styles for the build section parked in build-section.partial.html.
+   Paste back into site.css if that section returns. */
+
+/* ═══════════════════════════════════════════════════════════════════
+   Build steps
+   ═══════════════════════════════════════════════════════════════════ */
+.steps { margin: 0; padding: 0; list-style: none; }
+
+.step {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 2.5rem);
+  padding: clamp(1.6rem, 3vw, 2.2rem) 0;
+  border-top: 1px solid var(--edge);
+}
+.step:last-of-type { border-bottom: 1px solid var(--edge); }
+
+.step__num {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--hot);
+}
+
+.step__body > * { margin: 0 0 0.9rem; }
+.step__body > *:last-child { margin-bottom: 0; }
+.step__body p { color: var(--text-dim); }
+
+.step__title {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+
+.step pre {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--edge);
+  border-left: 2px solid var(--hot);
+  border-radius: 4px;
+  background: rgba(7, 3, 13, 0.75);
+  overflow-x: auto;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+.step pre .c { color: #6b5a86; }
+
+.caution {
+  display: block;
+  margin: 1.8rem 0 0;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid rgba(255, 194, 77, 0.4);
+  border-radius: 6px;
+  background: rgba(255, 194, 77, 0.06);
+  font-size: 0.94rem;
+  color: var(--text-dim);
+}
+.caution code { color: var(--amber); }
+
+.caution__tag {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
