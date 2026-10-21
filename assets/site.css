@@ -454,6 +454,22 @@ code, pre { font-family: var(--mono); }
 }
 .plate__idx { color: var(--hot); margin-inline-end: 0.5rem; }
 
+.hw-demo {
+  margin: 0;
+  max-width: 760px;
+  margin-inline: auto;
+  border: 1px solid var(--edge);
+  border-radius: 6px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--deck), var(--void));
+}
+.hw-demo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: rgba(7, 3, 13, 0.55);
+}
+
 /* ═══════════════════════════════════════════════════════════════════
    Files
    ═══════════════════════════════════════════════════════════════════ */

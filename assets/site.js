@@ -1,26 +1,11 @@
 /*
  * Joyfon site.
  *
- *   1. The hero starts as a still render so the page is usable immediately,
- *      then upgrades to the animation once everything else has loaded.
- *   2. Hardware renders open full size in a centred lightbox.
- *
- * Readers who asked for reduced motion keep the still.
+ *   The hero is a still render. Hardware renders open full size in a
+ *   centred lightbox.
  */
 (function () {
   'use strict';
-
-  // ── hero ───────────────────────────────────────────────────────────
-  window.addEventListener('load', function () {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    var hero = document.getElementById('hero-media');
-    if (!hero) return;
-
-    var gif = new Image();
-    gif.onload = function () { hero.src = gif.src; };
-    gif.src = 'images/JoyFon-Dark-Hero.gif';
-  });
 
   // ── lightbox ───────────────────────────────────────────────────────
   var box = document.getElementById('lightbox');
