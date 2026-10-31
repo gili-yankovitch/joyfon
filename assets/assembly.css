@@ -1,0 +1,27 @@
+.assembly { position: relative; z-index: 1; }
+.assembly .section { max-width: 1040px; }
+.guide-intro { padding-bottom: 1rem; }
+.guide-intro .h2 { font-size: clamp(2.7rem, 7vw, 5rem); }
+.guide-step { scroll-margin-top: 6rem; border-top: var(--rail); }
+.guide-step > p { max-width: 76ch; }
+.guide-figure { margin: 2rem 0; border: var(--rail); background: var(--deck); }
+.guide-figure .plate__btn { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
+.guide-figure img { display: block; width: 100%; height: auto; padding: 0; }
+.guide-figure figcaption { padding: 1rem 1.25rem; color: var(--text-dim); font-family: var(--body); font-size: 1rem; letter-spacing: normal; text-transform: none; }
+.guide-photo { display: block; position: relative; }
+.guide-photo svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.guide-check { border-left: 3px solid var(--ice); background: var(--deck); padding: 1.25rem 1.5rem; margin: 2rem 0; }
+.guide-check strong { font-family: var(--mono); color: var(--ice); letter-spacing: .2em; }
+.guide-check p { margin-bottom: 0; }
+.guide-index ol { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .7rem 2.5rem; padding-left: 1.5rem; }
+.guide-table { overflow-x: auto; margin: 2rem 0; }
+.guide-table table { border-collapse: collapse; width: 100%; background: var(--deck); }
+.guide-table caption { text-align: left; font-family: var(--mono); color: var(--ice); margin-bottom: .75rem; }
+.guide-table th, .guide-table td { text-align: left; padding: .8rem; border: var(--rail); }
+.guide-table th { color: var(--hot-soft); }
+.guide-back { font-family: var(--mono); font-size: .9rem; }
+.guide-intro .btn { margin-top: 1.5rem; }
+.guide-step { padding-bottom: 2rem; }
+.topbar__nav [aria-current] { color: var(--ice); }
+@media(max-width:720px) { .guide-index ol { grid-template-columns: 1fr; } .guide-table { font-size: .85rem; } }
+@media print { .topbar,.scanlines,.footer,.guide-index,.guide-back,.guide-intro .btn { display: none; } body { background: white; color: black; } body::before { display: none; } .guide-step { break-before: page; } .guide-check,.guide-figure,.guide-table table { background: white; } .guide-figure figcaption,.assembly .h2 { color: #333; text-shadow: none; } }

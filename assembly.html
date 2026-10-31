@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JoyFon — Assembly Guide</title>
+<meta name="description" content="Build your JoyFon with a complete illustrated assembly guide, component list and checks for every step.">
+<meta name="theme-color" content="#07030d">
+
+<meta property="og:title" content="JoyFon — Assembly Guide">
+<meta property="og:description" content="A complete illustrated JoyFon assembly guide.">
+<meta property="og:image" content="images/front.png">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="images/front-transparent.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Space+Grotesk:wght@400;500;700&family=Tourney:ital,wght@0,600;0,800;1,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/assembly.css">
+</head>
+
+<body><div class="scanlines" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="topbar__mark" href="index.html">JOYFON</a>
+  <nav class="topbar__nav" aria-label="Sections">
+    <a href="index.html#hardware">Hardware</a>
+    <a href="index.html#files">What's inside</a>
+  <a href="assembly.html" aria-current="page">Assembly guide</a></nav>
+  <a class="topbar__repo" href="https://github.com/gili-yankovitch/joyfon">Source ↗</a>
+</header>
+
+
+<main id="top" class="assembly"><section class="section guide-intro"><p class="eyebrow">Build your JoyFon · 12 steps</p><h1 class="h2">Assembly guide</h1><p class="section__lede">From the USB Daughterboard to the final button check. Follow the photos in order, with the correct fasteners and a check at every stage.</p><a class="btn btn--ghost" href="#step-01">Start assembling ↓</a></section>
+<section class="section" id="components"><p class="eyebrow">Before you begin</p><h2 class="h2">Parts on the table.</h2>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/inventory-labeled-preview.jpg" alt="JoyFon components laid out for assembly. The two M3x3 brass threaded inserts are required but are not pictured." width="1920" height="1080" loading="lazy"></button><figcaption>JoyFon components laid out for assembly. The two M3x3 brass threaded inserts are required but are not pictured.</figcaption></figure>
+<ul><li>Screws: 2x M2x4, 3x M2x8, 2x M3x20</li><li>2x M3x3 brass threaded inserts — inventory photo to be added</li><li>Boards: Main Controller PCB; USB Daughterboard</li><li>10 cm / 5 cm, 6-pin, 0.5 mm pitch forward FFC ribbon cable</li><li>Hinge itself (with USB holder); hinge system height extender; hinge left half; hinge right half; hinge USB board cover</li><li>D-PAD; shoulder button; B; X; Y; A; shoulder button; Start + Select button</li><li>2x 10 mm-diameter silicon feet; back plate; main body</li></ul>
+<div class="guide-table"><table><caption>Fasteners and their uses</caption><thead><tr><th>Quantity</th><th>Hardware</th><th>Driver</th><th>Use</th></tr></thead><tbody>
+<tr><td>2</td><td>M2x4 · 4 mm stem</td><td>hex socket</td><td>Main Controller PCB to back plate</td></tr>
+<tr><td>3</td><td>M2x8 · 8 mm stem</td><td>hex socket</td><td>Back plate to main controller body</td></tr>
+<tr><td>2</td><td>M3x20 · 20 mm stem</td><td>Phillips</td><td>Hinge system to main controller body</td></tr>
+<tr><td>2</td><td>M3x3 brass threaded inserts</td><td>Soldering iron</td><td>Hinge mounting points in the main body</td></tr></tbody></table></div>
+<p>Identify the Main Controller PCB and the USB Daughterboard. The USB Daughterboard carries the USB-C male plug and an FFC ribbon-cable connector; the two boards connect through the ribbon cable.</p>
+<p>Prepare the hinge itself (the hinge with USB holder part), hinge system height extender, hinge left half, hinge right half, hinge USB board cover, main body and back plate.</p>
+<p>Lay out the D-PAD, two identical shoulder buttons, B, X, Y and A buttons, and the symmetric Start + Select button piece. Prepare two 10 mm-diameter silicon feet.</p>
+<p>Use a matching hex driver for the M2 screws and a Phillips screwdriver for the M3x20 screws. Have a soldering iron ready for the two M3x3 brass threaded inserts. Keep the phone disconnected during assembly.</p>
+</section><nav class="section guide-index" aria-label="Assembly steps"><p class="eyebrow">Choose a step</p><ol>
+<li><a href="#step-01">Connect the ribbon to the USB Daughterboard</a></li>
+<li><a href="#step-02">Fit the hinge USB board cover</a></li>
+<li><a href="#step-03">Route the ribbon and assemble the hinge system</a></li>
+<li><a href="#step-04">Prepare the two M3x20 hinge-system screws</a></li>
+<li><a href="#step-05">Secure the Main Controller PCB to the back plate</a></li>
+<li><a href="#step-06">Install the two M3x3 brass threaded inserts</a></li>
+<li><a href="#step-07">Attach the hinge system to the main controller body</a></li>
+<li><a href="#step-08">Connect the ribbon to the Main Controller PCB</a></li>
+<li><a href="#step-09">Fit the D-PAD, shoulder buttons and face buttons</a></li>
+<li><a href="#step-10">Fit the back plate and fasten three M2x8 screws</a></li>
+<li><a href="#step-11">Stick the silicon feet to the outside of the back plate</a></li>
+<li><a href="#step-12">Connect the phone, then perform the final click-test</a></li>
+</ol></nav>
+<section class="section guide-step" id="step-01"><p class="eyebrow">Step 01 / 12</p><h2 class="h2">Connect the ribbon to the USB Daughterboard</h2>
+<p>Insert the 6-pin, 0.5 mm-pitch forward FFC ribbon into the connector on the USB Daughterboard, matching the orientation in the close-up. Seat it squarely.</p>
+<p>Fit the board with its USB-C male plug aligned to its opening in the hinge with USB holder part. Fold the ribbon smoothly back and to the right to allow it to sit gently on the hinge&#x27;s floor.</p>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/01-connector-ribbon-01.jpg" alt="USB Daughterboard: align the USB-C male plug and the ribbon-cable connector." width="1920" height="1080" loading="lazy"></button><figcaption>USB Daughterboard: align the USB-C male plug and the ribbon-cable connector.</figcaption></figure>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/01-connector-ribbon-02.jpg" alt="Insert the 6-pin, 0.5 mm-pitch forward FFC ribbon squarely into the USB Daughterboard." width="1920" height="1080" loading="lazy"></button><figcaption>Insert the 6-pin, 0.5 mm-pitch forward FFC ribbon squarely into the USB Daughterboard.</figcaption></figure>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/01-connector-ribbon-03.jpg" alt="Fold the ribbon smoothly back and to the right so it sits gently on the hinge&#x27;s floor, and fit the USB Daughterboard into the hinge part recess." width="1920" height="1080" loading="lazy"></button><figcaption>Fold the ribbon smoothly back and to the right so it sits gently on the hinge&#x27;s floor, and fit the USB Daughterboard into the hinge part recess.</figcaption></figure>
+<aside class="guide-check"><strong>CHECK</strong><p>The ribbon is seated squarely, folded smoothly back and to the right, and rests on the hinge&#x27;s floor without twisting.</p></aside><a class="guide-back" href="#top">Back to top ↑</a></section>
+<section class="section guide-step" id="step-02"><p class="eyebrow">Step 02 / 12</p><h2 class="h2">Fit the hinge USB board cover</h2>
+<p>Fit the hinge USB board cover while keeping the ribbon clear of the mating surfaces. Check both seating points shown in the photos.</p>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/02-enclosure-screws-01.jpg" alt="Seat the hinge USB board cover over the USB Daughterboard, with the ribbon clear." width="1920" height="1080" loading="lazy"></button><figcaption>Seat the hinge USB board cover over the USB Daughterboard, with the ribbon clear.</figcaption></figure>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/02-enclosure-screws-02.jpg" alt="Check the other seating point while keeping the USB-C male plug aligned." width="1920" height="1080" loading="lazy"></button><figcaption>Check the other seating point while keeping the USB-C male plug aligned.</figcaption></figure>
+<aside class="guide-check"><strong>CHECK</strong><p>The USB Daughterboard and hinge USB board cover are seated, the USB-C male plug is aligned, and the ribbon is not trapped.</p></aside><a class="guide-back" href="#top">Back to top ↑</a></section>
+<section class="section guide-step" id="step-03"><p class="eyebrow">Step 03 / 12</p><h2 class="h2">Route the ribbon and assemble the hinge system</h2>
+<p>Roll the cable excess twice and fit the rolled cable inside the open hollow of the hinge itself (the hinge with USB holder part). </p>
+<p>Then, route the ribbon cable through the back opening of the hinge. Bring the separate hinge right half into position, as shown in the second photo. Slide the ribbon cable through the hinge right half slit on its circular cavity.</p>
+<p>Slide the ribbon cable through the slit on the right side of the hinge left half&#x27;s flat part. Slide the hinge itself into the left round cavity of the left hinge half, bringing the two hinge halves together.</p>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/03-sliding-clamp-01.jpg" alt="The hinge: roll the excess cable twice and fit it into the hinge&#x27;s own open hollow, not into a hinge half." width="1920" height="1080" loading="lazy"></button><figcaption>The hinge: roll the excess cable twice and fit it into the hinge&#x27;s own open hollow, not into a hinge half.</figcaption></figure>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/03-sliding-clamp-02.jpg" alt="The hinge right half: bring this separate half around the hinge, routing the ribbon through the opening." width="1920" height="1080" loading="lazy"></button><figcaption>The hinge right half: bring this separate half around the hinge, routing the ribbon through the opening.</figcaption></figure>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/03-sliding-clamp-03.jpg" alt="The hinge left half: guide the ribbon through its right-side slit, then slide the hinge itself into the left round cavity." width="1920" height="1080" loading="lazy"></button><figcaption>The hinge left half: guide the ribbon through its right-side slit, then slide the hinge itself into the left round cavity.</figcaption></figure>
+<p>Use the hinge system height extender and slide its pin down the hollow of the hinge halves. Align the ribbon with the right-side slit while bringing the hinge and the two halves together.</p>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/03-sliding-clamp-04.jpg" alt="Fit the hinge system height extender through the two hinge halves while keeping the ribbon clear of the slit edges." width="1920" height="1080" loading="lazy"></button><figcaption>Fit the hinge system height extender through the two hinge halves while keeping the ribbon clear of the slit edges.</figcaption></figure>
+<aside class="guide-check"><strong>CHECK</strong><p>Check that the cable is not pinched by the hinge itself or the hinge housings. Keep the ribbon aligned with the right-side slit as the parts come together.</p></aside><a class="guide-back" href="#top">Back to top ↑</a></section>
+<section class="section guide-step" id="step-04"><p class="eyebrow">Step 04 / 12</p><h2 class="h2">Prepare the two M3x20 hinge-system screws</h2>
+<p>Use the two M3x20 Phillips screws at the hinge-system mounting points shown.</p>
+<p>Do not fully insert or tighten them yet. Advance each screw only until its far end is flush with the hinge top. Final tightening happens after the threaded inserts are installed in the main controller body.</p>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/04-clamp-screws-01.jpg" alt="Start the first M3x20 Phillips screw; leave its far end flush with the hinge top." width="1920" height="1080" loading="lazy"></button><figcaption>Start the first M3x20 Phillips screw; leave its far end flush with the hinge top.</figcaption></figure>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/04-clamp-screws-02.jpg" alt="Set the second M3x20 Phillips screw to the same flush position. Do not fully tighten yet." width="1920" height="1080" loading="lazy"></button><figcaption>Set the second M3x20 Phillips screw to the same flush position. Do not fully tighten yet.</figcaption></figure>
+<aside class="guide-check"><strong>CHECK</strong><p>Both M3x20 screw tips are flush with the hinge top. Neither screw is fully tightened yet.</p></aside><a class="guide-back" href="#top">Back to top ↑</a></section>
+<section class="section guide-step" id="step-05"><p class="eyebrow">Step 05 / 12</p><h2 class="h2">Secure the Main Controller PCB to the back plate</h2>
+<p>Align the Main Controller PCB with the back plate and its mounting holes.</p>
+<p>Use the two M2x4 hex-socket screws to hold the main PCB to the back plate. Fit the first screw, then the second, while keeping the PCB seated at both mounting points.</p>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/05-pcb-backplate-01.jpg" alt="Align the Main Controller PCB and the back plate at their mounting holes." width="1920" height="1080" loading="lazy"></button><figcaption>Align the Main Controller PCB and the back plate at their mounting holes.</figcaption></figure>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/05-pcb-backplate-02.jpg" alt="Fit the first M2x4 hex-socket screw holding the main PCB to the back plate." width="1920" height="1080" loading="lazy"></button><figcaption>Fit the first M2x4 hex-socket screw holding the main PCB to the back plate.</figcaption></figure>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/05-pcb-backplate-03.jpg" alt="Fit the second M2x4 hex-socket screw while keeping the PCB seated." width="1920" height="1080" loading="lazy"></button><figcaption>Fit the second M2x4 hex-socket screw while keeping the PCB seated.</figcaption></figure>
+<aside class="guide-check"><strong>CHECK</strong><p>Both M2x4 hex-socket screws are fitted and the PCB lies flat against its mounting points.</p></aside><a class="guide-back" href="#top">Back to top ↑</a></section>
+<section class="section guide-step" id="step-06"><p class="eyebrow">Step 06 / 12</p><h2 class="h2">Install the two M3x3 brass threaded inserts</h2>
+<p>Identify the two M3x3 brass threaded inserts and the two holes in the bottom of the controller main body. The two holes are indicated by arrows in the second photo.</p>
+<p>Place the inserts upright in the holes. Use the soldering iron to warm and gently seat the inserts, then allow the body to cool.</p>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/06-inserts-visible-0259.jpg" alt="Identify the M3x3 brass threaded inserts before installation." width="1920" height="1080" loading="lazy"></button><figcaption>Identify the M3x3 brass threaded inserts before installation.</figcaption></figure>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/06-insert-holes-0305.svg" alt="The arrows indicate the two holes that will house the M3x3 brass threaded inserts." width="1920" height="1080" loading="lazy"></button><figcaption>The arrows indicate the two holes that will house the M3x3 brass threaded inserts.</figcaption></figure>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/06-threaded-inserts-03.jpg" alt="Use the soldering iron to seat the inserts in the main controller body." width="1920" height="1080" loading="lazy"></button><figcaption>Use the soldering iron to seat the inserts in the main controller body.</figcaption></figure>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/06-threaded-inserts-04.jpg" alt="Check that both inserts are flush with the body&#x27;s bottom plane and horizontally aligned." width="1920" height="1080" loading="lazy"></button><figcaption>Check that both inserts are flush with the body&#x27;s bottom plane and horizontally aligned.</figcaption></figure>
+<aside class="guide-check"><strong>CHECK</strong><p>Ensure the threaded inserts are flush with the bottom plane of the controller main body and aligned on the horizontal axis.</p></aside><a class="guide-back" href="#top">Back to top ↑</a></section>
+<section class="section guide-step" id="step-07"><p class="eyebrow">Step 07 / 12</p><h2 class="h2">Attach the hinge system to the main controller body</h2>
+<p>Insert the ribbon cable through the right-side slit in the controller main body. Bring the hinge system into position while keeping the ribbon clear of the mating surfaces.</p>
+<p>Seat the hinge system against the main controller body. Tighten the M3x20 screws holding the hinge system: they should align with and tighten into the respective M3x3 threaded inserts embedded in the controller body.</p>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/07-housing-join-01.jpg" alt="Insert the ribbon through the right-side slit in the main controller body." width="1920" height="1080" loading="lazy"></button><figcaption>Insert the ribbon through the right-side slit in the main controller body.</figcaption></figure>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/07-housing-join-02.jpg" alt="Bring the hinge system and main body together, without pinching the cable." width="1920" height="1080" loading="lazy"></button><figcaption>Bring the hinge system and main body together, without pinching the cable.</figcaption></figure>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/07-housing-join-03.jpg" alt="Now tighten both M3x20 Phillips screws into the corresponding embedded threaded inserts." width="1920" height="1080" loading="lazy"></button><figcaption>Now tighten both M3x20 Phillips screws into the corresponding embedded threaded inserts.</figcaption></figure>
+<aside class="guide-check"><strong>CHECK</strong><p>Both M3x20 screws engage their respective inserts. The hinge system is seated and the ribbon is not pinched.</p></aside><a class="guide-back" href="#top">Back to top ↑</a></section>
+<section class="section guide-step" id="step-08"><p class="eyebrow">Step 08 / 12</p><h2 class="h2">Connect the ribbon to the Main Controller PCB</h2>
+<p>Turn the free ribbon end toward the Main Controller PCB connector, matching the fold and contact orientation shown.</p>
+<p>Insert and secure the ribbon squarely. Keep enough relaxed cable for the Main Controller PCB and back plate to fold onto the main controller body without stretching or pinching the ribbon.</p>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/08-ribbon-pcb-01.jpg" alt="Turn the FFC ribbon toward the Main Controller PCB connector." width="1920" height="1080" loading="lazy"></button><figcaption>Turn the FFC ribbon toward the Main Controller PCB connector.</figcaption></figure>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/08-ribbon-pcb-02.jpg" alt="Insert the ribbon squarely to connect the Main Controller PCB to the USB Daughterboard." width="1920" height="1080" loading="lazy"></button><figcaption>Insert the ribbon squarely to connect the Main Controller PCB to the USB Daughterboard.</figcaption></figure>
+<aside class="guide-check"><strong>CHECK</strong><p>The FFC cable connects the USB Daughterboard to the Main Controller PCB and has room to fold inside the body.</p></aside><a class="guide-back" href="#top">Back to top ↑</a></section>
+<section class="section guide-step" id="step-09"><p class="eyebrow">Step 09 / 12</p><h2 class="h2">Fit the D-PAD, shoulder buttons and face buttons</h2>
+<p>Work from the inside perspective shown. The D-PAD goes inside the round cavity to the right; notice and match the notch that orients it.</p>
+<p>The two shoulder buttons are identical. Fit one into each upper corner. The Start + Select button piece is symmetric and goes at the bottom.</p>
+<p>Arrange the ABXY buttons clockwise from the inside perspective: Y, X, A, B.</p>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/09-controls-membrane-01.jpg" alt="Inside view: orient the D-PAD by its notch in the right round cavity; fit the identical shoulder buttons into the upper corners." width="1920" height="1080" loading="lazy"></button><figcaption>Inside view: orient the D-PAD by its notch in the right round cavity; fit the identical shoulder buttons into the upper corners.</figcaption></figure>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/09-controls-membrane-02.jpg" alt="Fit the symmetric Start + Select piece at the bottom. The inside-view clockwise face-button order is Y, X, A, B." width="1920" height="1080" loading="lazy"></button><figcaption>Fit the symmetric Start + Select piece at the bottom. The inside-view clockwise face-button order is Y, X, A, B.</figcaption></figure>
+<aside class="guide-check"><strong>CHECK</strong><p>The D-PAD notch is aligned, both shoulder buttons are seated, Start + Select is at the bottom, and the inside-view clockwise sequence is Y-X-A-B.</p></aside><a class="guide-back" href="#top">Back to top ↑</a></section>
+<section class="section guide-step" id="step-10"><p class="eyebrow">Step 10 / 12</p><h2 class="h2">Fit the back plate and fasten three M2x8 screws</h2>
+<p>Fold the Main Controller PCB and back plate onto the main controller body while guiding the ribbon into the internal space.</p>
+<p>It might be easier to fit the bottom part of the back plate first, then slide in the top.</p>
+<p>Use the three M2x8 hex-socket screws to close the back plate to the main controller body. Keep the panel seated while fastening all three mounting points.</p>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/10-back-panel-screws-v2-02.jpg" alt="Fit the bottom of the back plate first, then slide the top into place." width="1920" height="1080" loading="lazy"></button><figcaption>Fit the bottom of the back plate first, then slide the top into place.</figcaption></figure>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/10-back-panel-screws-v2-03.jpg" alt="Fasten the first of the three M2x8 hex-socket back-plate screws." width="1920" height="1080" loading="lazy"></button><figcaption>Fasten the first of the three M2x8 hex-socket back-plate screws.</figcaption></figure>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/10-back-panel-screws-v2-04.jpg" alt="Fasten the second M2x8 hex-socket back-plate screw." width="1920" height="1080" loading="lazy"></button><figcaption>Fasten the second M2x8 hex-socket back-plate screw.</figcaption></figure>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/10-back-panel-screws-v2-05.jpg" alt="Fasten the third M2x8 hex-socket screw while keeping the back plate evenly seated." width="1920" height="1080" loading="lazy"></button><figcaption>Fasten the third M2x8 hex-socket screw while keeping the back plate evenly seated.</figcaption></figure>
+<aside class="guide-check"><strong>CHECK</strong><p>The back plate is seated evenly, all three M2x8 hex-socket screws are fitted, and the ribbon is clear of the seam.</p></aside><a class="guide-back" href="#top">Back to top ↑</a></section>
+<section class="section guide-step" id="step-11"><p class="eyebrow">Step 11 / 12</p><h2 class="h2">Stick the silicon feet to the outside of the back plate</h2>
+<p>Stick the two 10 mm-diameter silicon feet to the back panel&#x27;s outside at the circular positions shown.</p>
+<p>Press each silicon foot down so it adheres fully and its edge is seated.</p>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/11-felt-click-test-01.jpg" alt="Stick each 10 mm-diameter silicon foot to the outside of the back plate." width="1920" height="1080" loading="lazy"></button><figcaption>Stick each 10 mm-diameter silicon foot to the outside of the back plate.</figcaption></figure>
+<aside class="guide-check"><strong>CHECK</strong><p>Both silicon feet stick to the outside of the back plate and remain clear of the seam.</p></aside><a class="guide-back" href="#top">Back to top ↑</a></section>
+<section class="section guide-step" id="step-12"><p class="eyebrow">Step 12 / 12</p><h2 class="h2">Connect the phone, then perform the final click-test</h2>
+<p>Align the USB-C male plug on the USB Daughterboard with the phone&#x27;s USB socket. Support both parts and slide the plug straight into the socket until seated.</p>
+<p>Check the completed connection, then perform the final click-test shown in the last photo.</p>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/12-phone-usb-01.jpg" alt="Align the USB-C male plug with the phone&#x27;s USB socket." width="1920" height="1080" loading="lazy"></button><figcaption>Align the USB-C male plug with the phone&#x27;s USB socket.</figcaption></figure>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/12-phone-usb-02.jpg" alt="Slide the USB-C male plug straight into the socket until seated." width="1920" height="1080" loading="lazy"></button><figcaption>Slide the USB-C male plug straight into the socket until seated.</figcaption></figure>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/12-phone-usb-03.jpg" alt="Check the controller is fully connected to the phone." width="1920" height="1080" loading="lazy"></button><figcaption>Check the controller is fully connected to the phone.</figcaption></figure>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/11-felt-click-test-02.jpg" alt="Final click-test: press each button three times and check that it returns after every click." width="1920" height="1080" loading="lazy"></button><figcaption>Final click-test: press each button three times and check that it returns after every click.</figcaption></figure>
+<aside class="guide-check"><strong>CHECK</strong><p>Check that all buttons click well and bounce back to the default position after the click. Check three times.</p></aside><a class="guide-back" href="#top">Back to top ↑</a></section>
+</main>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image" hidden>
+  <button class="lightbox__close" type="button" aria-label="Close">✕</button>
+  <figure class="lightbox__figure">
+    <img id="lightbox-img" src="" alt="">
+    <figcaption id="lightbox-cap"></figcaption>
+  </figure>
+</div>
+
+<footer class="footer">
+  <div class="footer__horizon" aria-hidden="true"></div>
+
+  <div class="footer__inner">
+
+    <div class="oshw">
+      <svg class="oshw__gear" viewBox="0 0 128 128" role="img" aria-labelledby="oshw-title">
+        <title id="oshw-title">Open source hardware</title>
+        <g fill="none" stroke="currentColor" stroke-width="15" stroke-linecap="butt">
+          <path d="M83.39 98.98 A 40 40 0 1 1 103.51 70.26"/>
+        </g>
+        <g fill="currentColor">
+          <path d="M71.35 110.42 L70.68 122.62 L57.32 122.62 L56.65 110.42 Z"/>
+          <path d="M36.37 102.02 L27.27 110.17 L17.83 100.73 L25.98 91.63 Z"/>
+          <path d="M17.58 71.35 L5.38 70.68 L5.38 57.32 L17.58 56.65 Z"/>
+          <path d="M25.98 36.37 L17.83 27.27 L27.27 17.83 L36.37 25.98 Z"/>
+          <path d="M56.65 17.58 L57.32 5.38 L70.68 5.38 L71.35 17.58 Z"/>
+          <path d="M91.63 25.98 L100.73 17.83 L110.17 27.27 L102.02 36.37 Z"/>
+        </g>
+      </svg>
+
+      <div class="oshw__copy">
+        <p class="oshw__title">Open source hardware</p>
+        <p class="oshw__text">
+          Nothing here is a black box. The firmware, the KiCad schematic and board, and the CAD for
+          every printed part live in the same repository — read them, fork them, cut a version that
+          fits your phone instead of this one.
+        </p>
+        <p class="oshw__clone"><code>git clone https://github.com/gili-yankovitch/joyfon</code></p>
+      </div>
+    </div>
+
+    <div class="footer__end">
+      <p class="footer__mark">JOYFON</p>
+      <nav class="footer__links" aria-label="Repository links">
+        <a href="https://github.com/gili-yankovitch/joyfon">Repository</a>
+        <a href="https://github.com/gili-yankovitch/joyfon/issues">Issues</a>
+        <a href="https://github.com/gili-yankovitch/joyfon/tree/main/hw/controller/PhoneController.pdf">Schematic PDF</a>
+        <a href="https://github.com/gili-yankovitch/joyfon/tree/main/stl">STLs</a>
+        <a href="https://github.com/gili-yankovitch/joyfon/blob/main/LICENSE">MIT license</a>
+      </nav>
+      <p class="footer__line">Built by <a href="https://github.com/gili-yankovitch">Gili Yankovitch</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>

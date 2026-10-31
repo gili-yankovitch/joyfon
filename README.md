@@ -115,3 +115,12 @@ supports HID controllers.
   distributing hardware.
 - The RP2040 USB enumeration errata fix (RP2040-E5) is enabled in
   `CMakeLists.txt`; it reserves GPIO15 internally on RP2040 boards.
+
+## Assembly guide
+
+Open [the illustrated assembly guide](assembly.html) for the complete build sequence,
+component inventory, fastener assignments and checks. All 35 assembly photos are
+included locally in `images/assembly/`. The page shares the home page styling.
+
+The `stl/` directory contains the 16 production STL parts, including the hinge
+height extender and the updated USB holder and cover.
