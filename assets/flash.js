@@ -137,21 +137,21 @@ if (!supported) {
 selectBundled();
 
 //--------------------------------------------------------------------+
-// Functionality test — read the flashed controller over WebHID.
+// Functionality test — read the flashed controller over the Gamepad API.
 //--------------------------------------------------------------------+
-// After flashing, the JoyFon enumerates as a wired DualShock 4. We open it
-// over WebHID and parse its input report (ID 0x01) using the exact byte layout
-// the firmware emits (see src/ds4.h), lighting up each button as it is pressed.
-
-const DS4_VID = 0x054c;
-const DS4_PID = 0x09cc;
+// Uses the Gamepad API, which works on desktop AND mobile (Android Chrome,
+// iOS Safari) — unlike WebHID, which no mobile browser supports. The flashed
+// JoyFon enumerates as a DualShock 4, which every platform maps to the
+// "standard" gamepad layout; we translate those standard indices back to the
+// physical JoyFon buttons, following the firmware's mapping.
 
 const connectBtn = $("connectBtn");
 const testStatus = $("testStatus");
 const pad = $("pad");
-const hidSupported = "hid" in navigator;
+const gpSupported = "getGamepads" in navigator;
 
-let hidDevice = null;
+let padIndex = null;
+let rafId = 0;
 
 function setTestStatus(text) { if (testStatus) testStatus.textContent = text; }
 
@@ -167,85 +167,77 @@ function clearPad() {
   }
 }
 
-// D-pad hat (0..7 clockwise from N, 8 = released) -> four directions.
-function applyHat(h) {
-  setPressed("btn-up",    h === 0 || h === 1 || h === 7);
-  setPressed("btn-right", h === 1 || h === 2 || h === 3);
-  setPressed("btn-down",  h === 3 || h === 4 || h === 5);
-  setPressed("btn-left",  h === 5 || h === 6 || h === 7);
+const isDown = (buttons, i) => !!(buttons[i] && buttons[i].pressed);
+
+// Standard-mapping index -> physical JoyFon button, derived from the firmware:
+//   face:  Cross=0 Circle=1 Square=2 Triangle=3
+//          A->Circle(1) B->Cross(0) X->Triangle(3) Y->Square(2)
+//   bumpers: L1=4 R1=5 ; SL->R1(5) SR->L1(4)
+//   center : Share=8 Options=9 ; START->Share(8) SELECT->Options(9)
+//   d-pad  : up=12 down=13 left=14 right=15
+function readGamepad() {
+  const gp = (navigator.getGamepads && navigator.getGamepads()[padIndex]) || null;
+  if (!gp) { stopTest("controller disconnected — press a button to reconnect"); return; }
+
+  const b = gp.buttons;
+  setPressed("btn-b", isDown(b, 0));
+  setPressed("btn-a", isDown(b, 1));
+  setPressed("btn-y", isDown(b, 2));
+  setPressed("btn-x", isDown(b, 3));
+  setPressed("btn-sr", isDown(b, 4));
+  setPressed("btn-sl", isDown(b, 5));
+  setPressed("btn-start",  isDown(b, 8));
+  setPressed("btn-select", isDown(b, 9));
+  setPressed("btn-up",    isDown(b, 12));
+  setPressed("btn-down",  isDown(b, 13));
+  setPressed("btn-left",  isDown(b, 14));
+  setPressed("btn-right", isDown(b, 15));
+
+  rafId = requestAnimationFrame(readGamepad);
 }
 
-// Input report payload (report ID already stripped by WebHID):
-//   offset 4 = buttons0 (hat in low nibble, face buttons in high nibble)
-//   offset 5 = buttons1 (shoulders, share/options, stick clicks)
-// Face/shoulder bit -> JoyFon label follows the firmware's Nintendo mapping.
-function onReport(e) {
-  if (e.reportId !== 0x01 || e.data.byteLength < 6) return;
-  const b0 = e.data.getUint8(4);
-  const b1 = e.data.getUint8(5);
-
-  applyHat(b0 & 0x0f);
-  setPressed("btn-a", b0 & 0x40); // A  -> Circle
-  setPressed("btn-b", b0 & 0x20); // B  -> Cross
-  setPressed("btn-x", b0 & 0x80); // X  -> Triangle
-  setPressed("btn-y", b0 & 0x10); // Y  -> Square
-
-  setPressed("btn-sl",     b1 & 0x01); // SL     -> L1
-  setPressed("btn-sr",     b1 & 0x02); // SR     -> R1
-  setPressed("btn-select", b1 & 0x10); // SELECT -> Share
-  setPressed("btn-start",  b1 & 0x20); // START  -> Options
-}
-
-async function openController(dev) {
-  try {
-    if (!dev.opened) await dev.open();
-  } catch (err) {
-    setTestStatus(`could not open controller: ${err.message}`);
-    return;
-  }
-  hidDevice = dev;
-  dev.addEventListener("inputreport", onReport);
+function startTest(gp) {
+  padIndex = gp.index;
   pad?.classList.add("live");
-  setTestStatus(`connected: ${dev.productName || "controller"} — press buttons`);
+  setTestStatus(`connected: ${(gp.id || "controller").slice(0, 36)} — press buttons`);
+  cancelAnimationFrame(rafId);
+  rafId = requestAnimationFrame(readGamepad);
 }
 
-async function connectController() {
-  if (!hidSupported) return;
-  try {
-    const devices = await navigator.hid.requestDevice({
-      filters: [{ vendorId: DS4_VID, productId: DS4_PID }],
-    });
-    if (!devices.length) { setTestStatus("no controller selected"); return; }
-    await openController(devices[0]);
-  } catch (err) {
-    setTestStatus(`connect failed: ${err.message}`);
-  }
+function stopTest(message) {
+  cancelAnimationFrame(rafId);
+  rafId = 0;
+  padIndex = null;
+  pad?.classList.remove("live");
+  clearPad();
+  setTestStatus(message);
 }
 
-if (!hidSupported) {
-  if (connectBtn) { connectBtn.disabled = true; connectBtn.title = "This browser has no WebHID."; }
-  setTestStatus("WebHID unavailable in this browser");
+function firstGamepad() {
+  const pads = navigator.getGamepads ? navigator.getGamepads() : [];
+  return Array.from(pads).find(Boolean) || null;
+}
+
+if (!gpSupported) {
+  if (connectBtn) { connectBtn.disabled = true; connectBtn.title = "This browser has no Gamepad API."; }
+  setTestStatus("gamepad testing unavailable in this browser");
 } else {
-  connectBtn?.addEventListener("click", connectController);
-
-  // Re-attach to a controller we were already granted (e.g. after flashing,
-  // when the board reboots and re-enumerates).
-  navigator.hid.getDevices().then((list) => {
-    const dev = list.find((d) => d.vendorId === DS4_VID && d.productId === DS4_PID);
-    if (dev) openController(dev);
+  // The browser only exposes a gamepad after the first input, so pressing a
+  // button both connects it and satisfies the user-gesture requirement.
+  window.addEventListener("gamepadconnected", (e) => {
+    if (padIndex === null) startTest(e.gamepad);
+  });
+  window.addEventListener("gamepaddisconnected", (e) => {
+    if (e.gamepad.index === padIndex) stopTest("controller disconnected — plug it back in to test again");
   });
 
-  navigator.hid.addEventListener("connect", (e) => {
-    const d = e.device;
-    if (!hidDevice && d.vendorId === DS4_VID && d.productId === DS4_PID) openController(d);
+  connectBtn?.addEventListener("click", () => {
+    const gp = firstGamepad();
+    if (gp) startTest(gp);
+    else setTestStatus("press any button on the controller to connect…");
   });
 
-  navigator.hid.addEventListener("disconnect", (e) => {
-    if (e.device === hidDevice) {
-      hidDevice = null;
-      pad?.classList.remove("live");
-      clearPad();
-      setTestStatus("controller unplugged — plug it back in to test again");
-    }
-  });
+  const existing = firstGamepad();
+  if (existing) startTest(existing);
+  else setTestStatus("plug in or pair your JoyFon, then press any button");
 }
