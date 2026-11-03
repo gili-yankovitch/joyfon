@@ -1,6 +1,6 @@
 # Joyfon
 
-A USB HID game controller for the Raspberry Pi Pico (RP2040 / RP2350).
+A USB HID game controller for the Raspberry Pi Pico (RP2040).
 
 Joyfon enumerates as a **standard USB HID gamepad**, so phones (Android), PCs,
 and emulators recognize it with no driver or app. The button layout mimics a
@@ -87,13 +87,6 @@ SDK submodules (TinyUSB) initialized.
 mkdir build && cd build
 cmake ..                    # or: cmake -DPICO_SDK_PATH=/path/to/pico-sdk ..
 make -j
-```
-
-To target a different board (e.g. a Pico 2 / RP2350), pass the board at
-configure time:
-
-```bash
-cmake -DPICO_BOARD=pico2 ..
 ```
 
 The build produces `build/joyfon.uf2`.
