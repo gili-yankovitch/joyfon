@@ -1,10 +1,13 @@
 #ifndef USB_DESCRIPTORS_H_
 #define USB_DESCRIPTORS_H_
 
-// We expose a single HID gamepad interface, so a report ID is not required.
-// Using 0 means "no report ID prefix" when calling tud_hid_report().
+// String descriptor indices. The real DualShock 4 exposes no serial string,
+// so we don't either - a serial the host has never seen from a controller
+// with this VID/PID is a needless difference.
 enum {
-  REPORT_ID_GAMEPAD = 0,
+  STRID_LANGID = 0,
+  STRID_MANUFACTURER,
+  STRID_PRODUCT,
 };
 
 #endif /* USB_DESCRIPTORS_H_ */

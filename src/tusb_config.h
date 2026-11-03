@@ -60,8 +60,9 @@ extern "C" {
 #define CFG_TUD_MIDI              0
 #define CFG_TUD_VENDOR            0
 
-// HID buffer size: must hold the largest report. Our gamepad report is 11 bytes.
-#define CFG_TUD_HID_EP_BUFSIZE    16
+// HID buffer size: the DualShock 4 uses 64-byte interrupt endpoints, and the
+// largest feature report it answers is also 64 bytes.
+#define CFG_TUD_HID_EP_BUFSIZE    64
 
 #ifdef __cplusplus
 }

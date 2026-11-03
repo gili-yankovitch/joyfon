@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flash your JoyFon — firmware over WebUSB</title>
+<meta name="description" content="Flash the JoyFon firmware straight from your browser over WebUSB — no picotool, no drive to find. Or download the .uf2 and copy it onto the RPI-RP2 drive.">
+<meta name="theme-color" content="#07030d">
+
+<meta property="og:title" content="Flash your JoyFon">
+<meta property="og:description" content="Flash the JoyFon firmware from your browser over WebUSB, or download the .uf2.">
+<meta property="og:image" content="images/front.png">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="images/front-transparent.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Space+Grotesk:wght@400;500;700&family=Tourney:ital,wght@0,600;0,800;1,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/flash.css">
+</head>
+<body>
+
+<div class="scanlines" aria-hidden="true"></div>
+
+<header class="topbar">
+  <a class="topbar__mark" href="index.html">JOYFON</a>
+  <nav class="topbar__nav" aria-label="Sections">
+    <a href="index.html#hardware">Hardware</a>
+    <a href="index.html#files">What's inside</a>
+    <a href="assembly.html">Assembly guide</a>
+    <a href="flash.html" aria-current="page">Flash</a>
+  </nav>
+  <a class="topbar__repo" href="https://github.com/gili-yankovitch/joyfon">Source ↗</a>
+</header>
+
+<main class="flash-main">
+
+  <p class="eyebrow">Firmware · RP2040 · WebUSB</p>
+  <h1 class="h2">Flash your JoyFon.</h1>
+  <p class="flash-lede">
+    The RP2040's ROM bootloader takes firmware over USB, and a Chromium browser can talk to it
+    directly through <b>WebUSB</b> — no <code>picotool</code>, no drive to hunt for, no Python.
+    Works in Chrome, Edge and other Chromium browsers on Windows, macOS, Linux, ChromeOS and
+    Android. Not Firefox, not Safari, and nothing on an iPhone — those can still download the
+    firmware below and copy it onto the <code>RPI-RP2</code> drive by hand.
+  </p>
+
+  <section class="panel">
+    <h2>Flash firmware</h2>
+    <p class="note">Put the JoyFon in the bootloader — hold <b>BOOTSEL</b> on the Pico while plugging
+      the USB-C cable in — then press <b>Flash</b> and choose <b>RP2 Boot</b>. The image below is the
+      build published with this site; or point it at a <code>.uf2</code> you built yourself.</p>
+    <p class="note file-pick"><b>Your own build:</b>
+      <input id="file" type="file" accept=".uf2,application/octet-stream"></p>
+
+    <div class="stage-bar">
+      <button id="flashBtn" class="btn btn--solid" disabled>Flash</button>
+      <a id="downloadBtn" class="btn ghost" href="firmware/joyfon.uf2" download>Download .uf2</a>
+      <span id="flashStatus" class="status">loading firmware…</span>
+    </div>
+    <progress id="progress" class="flash-progress" max="1" value="0" hidden></progress>
+    <ol id="flashLog" class="log" reversed></ol>
+  </section>
+
+  <section class="panel">
+    <h2>Functionality test</h2>
+    <p class="note">After flashing, plug the JoyFon into this computer and press
+      <b>Connect controller</b>. Every button you press lights up on the silhouette — a quick way to
+      check the wiring and the firmware before it goes on your phone.</p>
+
+    <div class="stage-bar">
+      <button id="connectBtn" class="btn btn--solid">Connect controller</button>
+      <span id="testStatus" class="status">not connected</span>
+    </div>
+
+    <div class="pad-wrap">
+      <svg id="pad" class="pad" viewBox="0 0 440 300" role="img"
+           aria-label="JoyFon button test silhouette" xmlns="http://www.w3.org/2000/svg">
+        <!-- shell -->
+        <rect class="pad-shell" x="14" y="24" width="412" height="256" rx="22"/>
+        <!-- quarter-circle corner shoulders -->
+        <path id="btn-sl" class="pad-btn" d="M34 44 L78 44 A44 44 0 0 1 34 88 Z"/>
+        <path id="btn-sr" class="pad-btn" d="M406 44 L362 44 A44 44 0 0 0 406 88 Z"/>
+        <text class="pad-lbl pad-lbl--sm" x="52"  y="66">SL</text>
+        <text class="pad-lbl pad-lbl--sm" x="388" y="66">SR</text>
+        <!-- d-pad: one plus, with arrows that flash when pressed -->
+        <polygon class="pad-dpad-c" points="103,97 137,97 137,133 173,133 173,167 137,167 137,203 103,203 103,167 67,167 67,133 103,133"/>
+        <polygon id="btn-up"    class="pad-arrow" points="120,104 112,119 128,119"/>
+        <polygon id="btn-down"  class="pad-arrow" points="120,196 112,181 128,181"/>
+        <polygon id="btn-left"  class="pad-arrow" points="73,150 88,142 88,158"/>
+        <polygon id="btn-right" class="pad-arrow" points="167,150 152,142 152,158"/>
+        <!-- face diamond: Nintendo layout (X top, Y left, A right, B bottom) -->
+        <circle id="btn-x" class="pad-btn" cx="330" cy="98"  r="27"/>
+        <circle id="btn-y" class="pad-btn" cx="282" cy="146" r="27"/>
+        <circle id="btn-a" class="pad-btn" cx="378" cy="146" r="27"/>
+        <circle id="btn-b" class="pad-btn" cx="330" cy="194" r="27"/>
+        <text class="pad-lbl pad-face" x="330" y="106">X</text>
+        <text class="pad-lbl pad-face" x="282" y="154">Y</text>
+        <text class="pad-lbl pad-face" x="378" y="154">A</text>
+        <text class="pad-lbl pad-face" x="330" y="202">B</text>
+        <!-- start / select, small pills centred -->
+        <rect id="btn-select" class="pad-btn" x="190" y="248" width="26" height="11" rx="5"/>
+        <rect id="btn-start"  class="pad-btn" x="224" y="248" width="26" height="11" rx="5"/>
+        <text class="pad-lbl pad-lbl--xs" x="203" y="269">SELECT</text>
+        <text class="pad-lbl pad-lbl--xs" x="237" y="269">START</text>
+      </svg>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__horizon" aria-hidden="true"></div>
+  <div class="footer__inner">
+    <div class="footer__end">
+      <p class="footer__mark">JOYFON</p>
+      <nav class="footer__links" aria-label="Repository links">
+        <a href="https://github.com/gili-yankovitch/joyfon">Repository</a>
+        <a href="https://github.com/gili-yankovitch/joyfon/issues">Issues</a>
+        <a href="assembly.html">Assembly guide</a>
+        <a href="https://github.com/gili-yankovitch/joyfon/blob/main/LICENSE">MIT license</a>
+      </nav>
+      <p class="footer__line">Built by <a href="https://github.com/gili-yankovitch">Gili Yankovitch</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="assets/flash.js"></script>
+</body>
+</html>
