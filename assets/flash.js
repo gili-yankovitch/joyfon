@@ -169,11 +169,12 @@ function clearPad() {
 
 const isDown = (buttons, i) => !!(buttons[i] && buttons[i].pressed);
 
-// Standard-mapping index -> physical JoyFon button, derived from the firmware:
-//   face:  Cross=0 Circle=1 Square=2 Triangle=3
-//          A->Circle(1) B->Cross(0) X->Triangle(3) Y->Square(2)
-//   bumpers: L1=4 R1=5 ; SL->R1(5) SR->L1(4)
-//   center : Share=8 Options=9 ; START->Share(8) SELECT->Options(9)
+// Standard-mapping index -> physical JoyFon button. The phone sees the device
+// as a standard gamepad; a physical button lights the pill that matches how it
+// actually plays (verified on-device), not the raw DS4 role the firmware uses.
+//   face:  A->Circle(1) B->Cross(0) X->Triangle(3) Y->Square(2)
+//   bumpers: SL=L1(4) SR=R1(5)
+//   center : SELECT=view/share(8) START=menu/options(9)
 //   d-pad  : up=12 down=13 left=14 right=15
 function readGamepad() {
   const gp = (navigator.getGamepads && navigator.getGamepads()[padIndex]) || null;
@@ -184,10 +185,10 @@ function readGamepad() {
   setPressed("btn-a", isDown(b, 1));
   setPressed("btn-y", isDown(b, 2));
   setPressed("btn-x", isDown(b, 3));
-  setPressed("btn-sr", isDown(b, 4));
-  setPressed("btn-sl", isDown(b, 5));
-  setPressed("btn-start",  isDown(b, 8));
-  setPressed("btn-select", isDown(b, 9));
+  setPressed("btn-sl", isDown(b, 4)); // physical SL = left shoulder (L1)
+  setPressed("btn-sr", isDown(b, 5)); // physical SR = right shoulder (R1)
+  setPressed("btn-select", isDown(b, 8)); // physical SELECT = view/share
+  setPressed("btn-start",  isDown(b, 9)); // physical START  = menu/options
   setPressed("btn-up",    isDown(b, 12));
   setPressed("btn-down",  isDown(b, 13));
   setPressed("btn-left",  isDown(b, 14));
