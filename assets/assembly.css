@@ -25,3 +25,6 @@
 .topbar__nav [aria-current] { color: var(--ice); }
 @media(max-width:720px) { .guide-index ol { grid-template-columns: 1fr; } .guide-table { font-size: .85rem; } }
 @media print { .topbar,.scanlines,.footer,.guide-index,.guide-back,.guide-intro .btn { display: none; } body { background: white; color: black; } body::before { display: none; } .guide-step { break-before: page; } .guide-check,.guide-figure,.guide-table table { background: white; } .guide-figure figcaption,.assembly .h2 { color: #333; text-shadow: none; } }
+
+.guide-source { border-top: var(--rail); padding: 1.25rem 0; }
+.guide-source h3 { color: var(--ice); margin-bottom: .5rem; }

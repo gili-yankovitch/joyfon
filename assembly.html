@@ -45,7 +45,44 @@
 <p>Prepare the hinge itself (the hinge with USB holder part), hinge system height extender, hinge left half, hinge right half, hinge USB board cover, main body and back plate.</p>
 <p>Lay out the D-PAD, two identical shoulder buttons, A, Y, X and B buttons, and the symmetric Start + Select button piece. Prepare two 10 mm-diameter silicon feet.</p>
 <p>Use a matching hex driver for the M2 screws and a Phillips screwdriver for the M3x20 screws. Have a soldering iron ready for the two M3x3 brass threaded inserts. Keep the phone disconnected during assembly.</p>
-</section><nav class="section guide-index" aria-label="Assembly steps"><p class="eyebrow">Choose a step</p><ol>
+</section><section id="production-orders" class="section guide-step"><p class="eyebrow">Production reference</p><h2 class="h2">PCBWay production orders</h2><p>Match the lettered regions to the order references below. The back plate and main body belong to different orders.</p>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/production-order-map.svg" width="1672" height="940" alt="Four lettered PCBWay groups: A hinge parts, buttons and back plate; B main body; C Main Controller PCB; D USB Daughterboard." loading="lazy"></button><figcaption>Lettered order groups recreated from the supplied production breakdown. Exact order references and components are listed below.</figcaption></figure>
+<div class="guide-table"><table><thead><tr><th>Key / order reference</th><th>Components in this order</th></tr></thead><tbody>
+<tr><td><strong>A</strong> · <code>C-X42W370858A</code></td><td><strong>Hinge system, buttons and back plate</strong><br>Back plate; hinge with USB holder; hinge USB board cover; height extender; both hinge halves; D-PAD; two shoulder buttons; Start + Select; A, B, X and Y buttons.</td></tr>
+<tr><td><strong>B</strong> · <code>C-X43W370858A</code></td><td><strong>Main controller body</strong><br>The white main controller body only. The back plate belongs to order A.</td></tr>
+<tr><td><strong>C</strong> · <code>W370858ASX25</code></td><td><strong>Main Controller PCB</strong><br>The large controller PCB.</td></tr>
+<tr><td><strong>D</strong> · <code>W370858ASX23</code></td><td><strong>USB Daughterboard</strong><br>The small PCB carrying the USB-C male plug and FFC connector.</td></tr>
+</tbody></table></div>
+<p>Screws, brass threaded inserts, FFC ribbon cable and silicone feet are not assigned to a PCBWay order in the supplied markup. Source hardware using the listings below; the FFC is specified separately in the inventory.</p></section>
+<section id="hardware-sourcing" class="section guide-step"><p class="eyebrow">Purchased hardware</p><h2 class="h2">Hardware sourcing</h2><p>Quantities below are per JoyFon assembly, separate from supplier pack sizes. Five M2x8 screws are required: three for the back plate and two for the USB cover.</p>
+<article class="guide-source"><h3>2× M3x20 Phillips/JIS cross-recess screw</h3>
+<p><strong>JIS-Fasteners 220R0320</strong><br>Use: Hinge system to main body.</p>
+<ul><li>Thread M3 x 0.5; length 20 mm.</li><li>Head diameter 5.0 mm maximum; Phillips/JIS cross recess.</li><li>A2 stainless steel. Supplier reference: 220R0320.</li></ul>
+<p><a href="https://jis-fasteners.com/products/m3-x-20-phil-pan-head-a2-stainless-jis-220r0320">JIS-Fasteners - 220R0320</a></p>
+</article>
+<article class="guide-source"><h3>5× M2x8 hex-socket button screw</h3>
+<p><strong>Hardware Specialty SKU 945863</strong><br>Use: 3 back plate to body; 2 USB cover to hinge.</p>
+<ul><li>ISO 7380-1 M2x8; hex-socket button head; A2 stainless steel.</li><li>Manufacturer reference: ISO7380-1-M2X8-A2.</li><li>Supplier: Hardware Specialty. Supplier SKU: 945863.</li></ul>
+<p><a href="https://www.hardwarespecialty.com/Product/945863">Hardware Specialty - 945863</a></p>
+</article>
+<article class="guide-source"><h3>2× M2x4 hex-socket button screw</h3>
+<p><strong>Vital Parts HBS73801-M2-4-A2 / Accu SSB-M2-4-A2</strong><br>Use: Main PCB to leftmost and rightmost back-plate bosses; top boss empty.</p>
+<ul><li>ISO 7380-1 M2x4; hex-socket button head; A2 stainless steel.</li><li>Choose either listed supplier reference.</li><li>Vital Parts: HBS73801-M2-4-A2. Alternative Accu: SSB-M2-4-A2.</li></ul>
+<p><a href="https://www.vital-parts.co.uk/hex-socket-button-screws-iso-7380-1/6924-hbs73801-m2-4-a2">Vital Parts - HBS73801-M2-4-A2</a> · <a href="https://www.accu.co.uk/socket-button-screws/8081-SSB-M2-4-A2">Accu alternative - SSB-M2-4-A2</a></p>
+<p>Vital Parts reference retained as supplied; the linked page currently resolves to its product family. The Accu alternative identifies the M2x4 A2 part.</p>
+</article>
+<article class="guide-source"><h3>2× M3x3 brass threaded insert</h3>
+<p><strong>Uxcell a18110700ux0588</strong><br>Use: Two heat-set seats in the main body.</p>
+<ul><li>Internal thread M3 x 0.5; outer diameter 5 mm; body height 3 mm.</li><li>Material: brass. Brand/reference: Uxcell a18110700ux0588.</li><li>Package quantity: 100 inserts. Use TWO inserts per JoyFon.</li></ul>
+<p><a href="https://www.harfington.com/en-gb/products/p-1057578">Harfington - a18110700ux0588</a></p>
+</article>
+<article class="guide-source"><h3>2× 10 mm silicone rubber feet</h3>
+<p><strong>Stoklasa 940582</strong><br>Use: Outside of the back plate.</p>
+<ul><li>Diameter 10 mm; height 2 mm; transparent silicone.</li><li>Self-adhesive anti-slip feet. Supplier reference: 940582.</li><li>Listing package: 100 pads. Use TWO feet per JoyFon.</li></ul>
+<p><a href="https://www.stoklasa-eu.com/self-adhesive-anti-slip-silicone-pads-100-pcs-10-mm-x162203">Stoklasa - 940582</a></p>
+</article>
+</section>
+<nav class="section guide-index" aria-label="Assembly steps"><p class="eyebrow">Choose a step</p><ol>
 <li><a href="#step-01">Connect the ribbon to the USB Daughterboard</a></li>
 <li><a href="#step-02">Fit the hinge USB board cover</a></li>
 <li><a href="#step-03">Route the ribbon and assemble the hinge system</a></li>
