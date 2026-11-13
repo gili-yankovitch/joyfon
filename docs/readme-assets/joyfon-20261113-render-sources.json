@@ -1,0 +1,418 @@
+{
+  "date": "2026-11-13",
+  "enclosure": [
+    {
+      "name": "BackPlate",
+      "sha256": "a5e564fe7d7d8de8f6511884335a97737103fa94013fa2a3d9697ad21fe767e8",
+      "source": "PhoneControllerCaseV0.3 - BackPlate.stl",
+      "translation": [
+        0.0,
+        9.637809498899486,
+        22.7621750831604
+      ],
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0
+        ]
+      ]
+    },
+    {
+      "name": "BtnA",
+      "sha256": "7b7dbeba4d10f51662a6b4efa2d1c8d0a71936b26f7f95aec69ebadaf478cdda",
+      "source": "PhoneControllerCaseV0.3 - BtnA.stl",
+      "translation": [
+        0.0,
+        7.437808259122875,
+        40.4378228187561
+      ],
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0
+        ]
+      ]
+    },
+    {
+      "name": "BtnB",
+      "sha256": "e623f9b733ac601e33ef4a28983aa58c3fd8520ef950f9689ee54d66c4667442",
+      "source": "PhoneControllerCaseV0.3 - BtnB.stl",
+      "translation": [
+        0.0,
+        7.437808259122875,
+        40.43782329559326
+      ],
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0
+        ]
+      ]
+    },
+    {
+      "name": "BtnSL",
+      "sha256": "3639dcdb0d017fad9520a1355773579147ea1fe982e36ffcc78327b6c52e9f8c",
+      "source": "PhoneControllerCaseV0.3 - BtnSL.stl",
+      "translation": [
+        0.0,
+        7.437808259122875,
+        40.43782329559326
+      ],
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0
+        ]
+      ]
+    },
+    {
+      "name": "BtnSR",
+      "sha256": "af4b7b6b45161babc394e1b0e878bad8a21bdf4f7ef372226b137f8c85ae0402",
+      "source": "PhoneControllerCaseV0.3 - BtnSR.stl",
+      "translation": [
+        0.0,
+        7.437808259122875,
+        40.43782329559326
+      ],
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0
+        ]
+      ]
+    },
+    {
+      "name": "BtnX",
+      "sha256": "989de1f55cc6e5dd73793f728d2192242e81f2485e1d41663eb7db6d57c5074b",
+      "source": "PhoneControllerCaseV0.3 - BtnX.stl",
+      "translation": [
+        0.0,
+        7.437808259122875,
+        40.43782377243042
+      ],
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0
+        ]
+      ]
+    },
+    {
+      "name": "BtnY",
+      "sha256": "7afb09ff406d56b5eb0eb1786d030268c439e6ba3f4ffe0bc3edc40299821434",
+      "source": "PhoneControllerCaseV0.3 - BtnY.stl",
+      "translation": [
+        0.0,
+        7.437808259122875,
+        40.437822103500366
+      ],
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0
+        ]
+      ]
+    },
+    {
+      "name": "ControllerBody",
+      "sha256": "f1fae07a663325ba1ae5acb62f387d115701eaa457c7ab68a2d7ef9ff990df60",
+      "source": "PhoneControllerCaseV0.3 - ControllerBody.stl",
+      "translation": [
+        1.9073486328125e-06,
+        -30.500000254518483,
+        -3.4999876022338867
+      ],
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "DPad",
+      "sha256": "accb733a76f1e6bcec3968de309f7491e6f6b8948d6618ea24213c8da0e680b0",
+      "source": "PhoneControllerCaseV0.3 - DPad.stl",
+      "translation": [
+        0.0,
+        10.487808449857738,
+        54.612177193164825
+      ],
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0
+        ]
+      ]
+    },
+    {
+      "name": "Hinge USB2",
+      "sha256": "e485797c50869012c7608b0c4bcbe0595c276a89d738f9bfe2c8ec60f97fd339",
+      "source": "PhoneControllerCaseV0.3 - Hinge USB2.stl",
+      "translation": [
+        0.0,
+        -40.43782043457031,
+        6.437821865081787
+      ],
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "HingeHousingPart1-Ext",
+      "sha256": "816d2bc9ec951fcfeb5d17ac877355a5ce6242abee52b6fa2c7be7c2dd036345",
+      "source": "PhoneControllerCaseV0.3 - HingeHousingPart1-Ext.stl",
+      "translation": [
+        50.0,
+        0.0,
+        27.0
+      ],
+      "rotation": [
+        [
+          -1.0,
+          -0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0
+        ]
+      ]
+    },
+    {
+      "name": "HingeHousingPart1",
+      "sha256": "86111dd08f87b957cb34c70a987393da549fe9584181587d1006739a4f38b354",
+      "source": "PhoneControllerCaseV0.3 - HingeHousingPart1.stl",
+      "translation": [
+        58.43782043457031,
+        0.0,
+        -11.562177896499634
+      ],
+      "rotation": [
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          -1.0,
+          -0.0,
+          -0.0
+        ]
+      ]
+    },
+    {
+      "name": "HingeHousingPart2",
+      "sha256": "56d0e0625bd8e75911a36804a71ebc0cd128816aef076db53058fcc0ed391fe7",
+      "source": "PhoneControllerCaseV0.3 - HingeHousingPart2.stl",
+      "translation": [
+        -58.43782043457031,
+        0.0,
+        -11.562177896499634
+      ],
+      "rotation": [
+        [
+          -0.0,
+          -0.0,
+          -1.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "StartSelectBtns",
+      "sha256": "56bcc6b097829990ba81f1e331947182499a0524b79a5d80a487c3860c2948d9",
+      "source": "PhoneControllerCaseV0.3 - StartSelectBtns.stl",
+      "translation": [
+        0.0,
+        3.352127774351146,
+        33.37649750709534
+      ],
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0
+        ]
+      ]
+    },
+    {
+      "name": "USB2 Cover",
+      "sha256": "fd27d00bea0a61e1103264e55c102f01adc8e738b1e4f1b52851d182dd9cf9b3",
+      "source": "PhoneControllerCaseV0.3 - USB2 Cover.stl",
+      "translation": [
+        0.0,
+        -34.0,
+        46.87564468383789
+      ],
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0
+        ]
+      ]
+    },
+    {
+      "name": "USB daughterboard model",
+      "sha256": "dbc2128c033c4a9af96c9eee50dd6d70f4959610c82458434b48baf916e80e07",
+      "source": "PhoneControllerCaseV0.3 - USB2.stl"
+    }
+  ],
+  "note": "Enclosure renders use the latest reviewed printing-orientation models. Repository STL files are unchanged. Colours are illustrative; silicone feet and screw heads are render annotations. PCB images are native KiCad 10 renders; controller front is B.Cu, back is F.Cu. Daughterboard images retain its production panel; missing custom connector 3D models are not fabricated.",
+  "pcb_solder_mask_render_color": "#49355F",
+  "pcb_color_note": "Purple solder mask is a presentation override applied to temporary render copies only, matching the original image palette. KiCad source designs are unchanged."
+}
