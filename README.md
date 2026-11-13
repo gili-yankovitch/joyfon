@@ -122,5 +122,5 @@ height extender and the updated USB holder and cover.
 
 - [Assembly manual](docs/JoyFon-assembly-guide.pdf)
 - [Mechanical and assembly drawings, Rev F](docs/JoyFon-mechanical-drawings.pdf)
-- [Main Controller PCB schematic](docs/JoyFon-controller-schematic.pdf)
-- [USB Daughterboard schematic](docs/JoyFon-usb-daughterboard-schematic.pdf)
+- [Main Controller PCB schematic](hw/controller/PhoneController.pdf)
+- [USB Daughterboard schematic](hw/usb/PhoneControllerUSB.pdf)
