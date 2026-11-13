@@ -8,7 +8,7 @@ Game Boy Color: a 4-way D-pad plus `A`, `B`, `X`, `Y`, shoulder buttons
 (`SR`/`SL`), and `START` / `SELECT`.
 
 <p align="center">
-  <img src="docs/readme-assets/joyfon-20261113-turntable.gif" alt="Joyfon controller" width="420">
+  <img src="images/JoyFon-Dark-Hero.gif" alt="Joyfon controller">
 </p>
 
 ## Enclosure & PCB
