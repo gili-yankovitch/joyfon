@@ -8,7 +8,7 @@ Game Boy Color: a 4-way D-pad plus `A`, `B`, `X`, `Y`, shoulder buttons
 (`SR`/`SL`), and `START` / `SELECT`.
 
 <p align="center">
-  <img src="images/JoyFon-Dark-Hero.gif" alt="Joyfon controller" width="420">
+  <img src="images/JoyFon-Dark-Hero.gif" alt="Joyfon controller">
 </p>
 
 ## Enclosure & PCB
@@ -18,11 +18,11 @@ The 3D-printable enclosure is modeled in Onshape:
 
 | Case front | Case back |
 | ---------- | --------- |
-| ![Case front](images/front.png) | ![Case back](images/back.png) |
+| ![Case front](docs/readme-assets/joyfon-20261113-case-front.png) | ![Case back](docs/readme-assets/joyfon-20261113-case-back.png) |
 
 | PCB front | PCB back |
 | --------- | -------- |
-| ![PCB front](images/pcb-front.png) | ![PCB back](images/pcb-back.png) |
+| ![PCB front](docs/readme-assets/joyfon-20261113-controller-front-purple.png) | ![PCB back](docs/readme-assets/joyfon-20261113-controller-back-purple.png) |
 
 ## Wiring
 
@@ -117,3 +117,10 @@ included locally in `images/assembly/`. The page shares the home page styling.
 
 The `stl/` directory contains the 16 production STL parts, including the hinge
 height extender and the updated USB holder and cover.
+
+## PDF documentation
+
+- [Assembly manual](docs/JoyFon-assembly-guide.pdf)
+- [Mechanical and assembly drawings, Rev F](docs/JoyFon-mechanical-drawings.pdf)
+- [Main Controller PCB schematic](hw/controller/PhoneController.pdf)
+- [USB Daughterboard schematic](hw/usb/PhoneControllerUSB.pdf)

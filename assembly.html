@@ -34,18 +34,55 @@
 
 <main id="top" class="assembly"><section class="section guide-intro"><p class="eyebrow">Build your JoyFon · 12 steps</p><h1 class="h2">Assembly guide</h1><p class="section__lede">From the USB Daughterboard to the final button check. Follow the photos in order, with the correct fasteners and a check at every stage.</p><a class="btn btn--ghost" href="#step-01">Start assembling ↓</a></section>
 <section class="section" id="components"><p class="eyebrow">Before you begin</p><h2 class="h2">Parts on the table.</h2>
-<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/inventory-labeled-preview.jpg" alt="JoyFon components laid out for assembly. The two M3x3 brass threaded inserts are required but are not pictured." width="1920" height="1080" loading="lazy"></button><figcaption>JoyFon components laid out for assembly. The two M3x3 brass threaded inserts are required but are not pictured.</figcaption></figure>
-<ul><li>Screws: 2x M2x4, 3x M2x8, 2x M3x20</li><li>2x M3x3 brass threaded inserts — inventory photo to be added</li><li>Boards: Main Controller PCB; USB Daughterboard</li><li>10 cm / 5 cm, 6-pin, 0.5 mm pitch forward FFC ribbon cable</li><li>Hinge itself (with USB holder); hinge system height extender; hinge left half; hinge right half; hinge USB board cover</li><li>D-PAD; shoulder button; A; Y; X; B; shoulder button; Start + Select button</li><li>2x 10 mm-diameter silicon feet; back plate; main body</li></ul>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/inventory-five-M2x8.png" alt="JoyFon components laid out for assembly. Two M3x3 brass threaded inserts are shown at the bottom left, using top and side views of the same part." width="1672" height="940" loading="lazy"></button><figcaption>JoyFon components laid out for assembly. Two M3x3 brass threaded inserts are shown at the bottom left, using top and side views of the same part.</figcaption></figure>
+<ul><li>Screws: 2x M2x4, 5x M2x8, 2x M3x20</li><li>2x M3x3 brass threaded inserts</li><li>Boards: Main Controller PCB; USB Daughterboard</li><li>10 cm / 5 cm, 6-pin, 0.5 mm pitch forward FFC ribbon cable</li><li>Hinge itself (with USB holder); hinge system height extender; hinge left half; hinge right half; hinge USB board cover</li><li>D-PAD; shoulder button; A; Y; X; B; shoulder button; Start + Select button</li><li>2x 10 mm-diameter silicon feet; back plate; main body</li></ul>
 <div class="guide-table"><table><caption>Fasteners and their uses</caption><thead><tr><th>Quantity</th><th>Hardware</th><th>Driver</th><th>Use</th></tr></thead><tbody>
 <tr><td>2</td><td>M2x4</td><td>hex socket</td><td>Main Controller PCB to back plate</td></tr>
-<tr><td>3</td><td>M2x8</td><td>hex socket</td><td>Back plate to main controller body</td></tr>
+<tr><td>5</td><td>M2x8</td><td>hex socket</td><td>3 back plate to body; 2 USB cover to hinge</td></tr>
 <tr><td>2</td><td>M3x20</td><td>Phillips</td><td>Hinge system to main controller body</td></tr>
 <tr><td>2</td><td>M3x3 brass threaded inserts</td><td>Soldering iron</td><td>Hinge mounting points in the main body</td></tr></tbody></table></div>
 <p>Identify the Main Controller PCB and the USB Daughterboard. The USB Daughterboard carries the USB-C male plug and an FFC ribbon-cable connector; the two boards connect through the ribbon cable.</p>
 <p>Prepare the hinge itself (the hinge with USB holder part), hinge system height extender, hinge left half, hinge right half, hinge USB board cover, main body and back plate.</p>
 <p>Lay out the D-PAD, two identical shoulder buttons, A, Y, X and B buttons, and the symmetric Start + Select button piece. Prepare two 10 mm-diameter silicon feet.</p>
 <p>Use a matching hex driver for the M2 screws and a Phillips screwdriver for the M3x20 screws. Have a soldering iron ready for the two M3x3 brass threaded inserts. Keep the phone disconnected during assembly.</p>
-</section><nav class="section guide-index" aria-label="Assembly steps"><p class="eyebrow">Choose a step</p><ol>
+</section><section id="production-orders" class="section guide-step"><p class="eyebrow">Production reference</p><h2 class="h2">PCBWay production orders</h2><p>Match the lettered regions to the order references below. The back plate and main body belong to different orders.</p>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/production-order-map.svg" width="1672" height="940" alt="Four lettered PCBWay groups: A hinge parts, buttons and back plate; B main body; C Main Controller PCB; D USB Daughterboard." loading="lazy"></button><figcaption>Lettered order groups recreated from the supplied production breakdown. Exact order references and components are listed below.</figcaption></figure>
+<div class="guide-table"><table><thead><tr><th>Key / order reference</th><th>Components in this order</th></tr></thead><tbody>
+<tr><td><strong>A</strong> · <code>C-X42W370858A</code></td><td><strong>Hinge system, buttons and back plate</strong><br>Back plate; hinge with USB holder; hinge USB board cover; height extender; both hinge halves; D-PAD; two shoulder buttons; Start + Select; A, B, X and Y buttons.</td></tr>
+<tr><td><strong>B</strong> · <code>C-X43W370858A</code></td><td><strong>Main controller body</strong><br>The white main controller body only. The back plate belongs to order A.</td></tr>
+<tr><td><strong>C</strong> · <code>W370858ASX25</code></td><td><strong>Main Controller PCB</strong><br>The large controller PCB.</td></tr>
+<tr><td><strong>D</strong> · <code>W370858ASX23</code></td><td><strong>USB Daughterboard</strong><br>The small PCB carrying the USB-C male plug and FFC connector.</td></tr>
+</tbody></table></div>
+<p>Screws, brass threaded inserts, FFC ribbon cable and silicone feet are not assigned to a PCBWay order in the supplied markup. Source hardware using the listings below; the FFC is specified separately in the inventory.</p></section>
+<section id="hardware-sourcing" class="section guide-step"><p class="eyebrow">Purchased hardware</p><h2 class="h2">Hardware sourcing</h2><p>Quantities below are per JoyFon assembly, separate from supplier pack sizes. Five M2x8 screws are required: three for the back plate and two for the USB cover.</p>
+<article class="guide-source"><h3>2× M3x20 Phillips/JIS cross-recess screw</h3>
+<p><strong>JIS-Fasteners 220R0320</strong><br>Use: Hinge system to main body.</p>
+<ul><li>Thread M3 x 0.5; length 20 mm.</li><li>Head diameter 5.0 mm maximum; Phillips/JIS cross recess.</li><li>A2 stainless steel. Supplier reference: 220R0320.</li></ul>
+<p><a href="https://jis-fasteners.com/products/m3-x-20-phil-pan-head-a2-stainless-jis-220r0320">JIS-Fasteners - 220R0320</a></p>
+</article>
+<article class="guide-source"><h3>5× M2x8 hex-socket button screw</h3>
+<p><strong>Hardware Specialty SKU 945863</strong><br>Use: 3 back plate to body; 2 USB cover to hinge.</p>
+<ul><li>ISO 7380-1 M2x8; hex-socket button head; A2 stainless steel.</li><li>Manufacturer reference: ISO7380-1-M2X8-A2.</li><li>Supplier: Hardware Specialty. Supplier SKU: 945863.</li></ul>
+<p><a href="https://www.hardwarespecialty.com/Product/945863">Hardware Specialty - 945863</a></p>
+</article>
+<article class="guide-source"><h3>2× M2x4 hex-socket button screw</h3>
+<p><strong>Vital Parts HBS73801-M2-4-A2 / Accu SSB-M2-4-A2</strong><br>Use: Main PCB to leftmost and rightmost back-plate bosses; top boss empty.</p>
+<ul><li>ISO 7380-1 M2x4; hex-socket button head; A2 stainless steel.</li><li>Choose either listed supplier reference.</li><li>Vital Parts: HBS73801-M2-4-A2. Alternative Accu: SSB-M2-4-A2.</li></ul>
+<p><a href="https://www.vital-parts.co.uk/hex-socket-button-screws-iso-7380-1/6924-hbs73801-m2-4-a2">Vital Parts - HBS73801-M2-4-A2</a> · <a href="https://www.accu.co.uk/socket-button-screws/8081-SSB-M2-4-A2">Accu alternative - SSB-M2-4-A2</a></p>
+<p>Vital Parts reference retained as supplied; the linked page currently resolves to its product family. The Accu alternative identifies the M2x4 A2 part.</p>
+</article>
+<article class="guide-source"><h3>2× M3x3 brass threaded insert</h3>
+<p><strong>Uxcell a18110700ux0588</strong><br>Use: Two heat-set seats in the main body.</p>
+<ul><li>Internal thread M3 x 0.5; outer diameter 5 mm; body height 3 mm.</li><li>Material: brass. Brand/reference: Uxcell a18110700ux0588.</li><li>Package quantity: 100 inserts. Use TWO inserts per JoyFon.</li></ul>
+<p><a href="https://www.harfington.com/en-gb/products/p-1057578">Harfington - a18110700ux0588</a></p>
+</article>
+<article class="guide-source"><h3>2× 10 mm silicone rubber feet</h3>
+<p><strong>Stoklasa 940582</strong><br>Use: Outside of the back plate.</p>
+<ul><li>Diameter 10 mm; height 2 mm; transparent silicone.</li><li>Self-adhesive anti-slip feet. Supplier reference: 940582.</li><li>Listing package: 100 pads. Use TWO feet per JoyFon.</li></ul>
+<p><a href="https://www.stoklasa-eu.com/self-adhesive-anti-slip-silicone-pads-100-pcs-10-mm-x162203">Stoklasa - 940582</a></p>
+</article>
+</section>
+<nav class="section guide-index" aria-label="Assembly steps"><p class="eyebrow">Choose a step</p><ol>
 <li><a href="#step-01">Connect the ribbon to the USB Daughterboard</a></li>
 <li><a href="#step-02">Fit the hinge USB board cover</a></li>
 <li><a href="#step-03">Route the ribbon and assemble the hinge system</a></li>
@@ -67,10 +104,10 @@
 <figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/01-connector-ribbon-03.jpg" alt="Fold the ribbon smoothly back and to the right so it sits gently on the hinge&#x27;s floor, and fit the USB Daughterboard into the hinge part recess." width="1920" height="1080" loading="lazy"></button><figcaption>Fold the ribbon smoothly back and to the right so it sits gently on the hinge&#x27;s floor, and fit the USB Daughterboard into the hinge part recess.</figcaption></figure>
 <aside class="guide-check"><strong>CHECK</strong><p>The ribbon is seated squarely, folded smoothly back and to the right, and rests on the hinge&#x27;s floor without twisting.</p></aside><a class="guide-back" href="#top">Back to top ↑</a></section>
 <section class="section guide-step" id="step-02"><p class="eyebrow">Step 02 / 12</p><h2 class="h2">Fit the hinge USB board cover</h2>
-<p>Fit the hinge USB board cover while keeping the ribbon clear of the mating surfaces. Check both seating points shown in the photos.</p>
-<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/02-enclosure-screws-01.jpg" alt="Seat the hinge USB board cover over the USB Daughterboard, with the ribbon clear." width="1920" height="1080" loading="lazy"></button><figcaption>Seat the hinge USB board cover over the USB Daughterboard, with the ribbon clear.</figcaption></figure>
-<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/02-enclosure-screws-02.jpg" alt="Check the other seating point while keeping the USB-C male plug aligned." width="1920" height="1080" loading="lazy"></button><figcaption>Check the other seating point while keeping the USB-C male plug aligned.</figcaption></figure>
-<aside class="guide-check"><strong>CHECK</strong><p>The USB Daughterboard and hinge USB board cover are seated, the USB-C male plug is aligned, and the ribbon is not trapped.</p></aside><a class="guide-back" href="#top">Back to top ↑</a></section>
+<p>Fit the hinge USB board cover while keeping the ribbon clear of the mating surfaces. Secure the cover to the hinge with two M2x8 hex-socket screws. Check both mounting points shown in the photos.</p>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/02-enclosure-screws-01.jpg" alt="Seat the hinge USB board cover over the USB Daughterboard and fasten the first M2x8 cover screw. Keep the ribbon clear." width="1920" height="1080" loading="lazy"></button><figcaption>Seat the hinge USB board cover over the USB Daughterboard and fasten the first M2x8 cover screw. Keep the ribbon clear.</figcaption></figure>
+<figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/02-enclosure-screws-02.jpg" alt="Fasten the second M2x8 screw joining the USB cover to the hinge. Keep the USB-C male plug aligned." width="1920" height="1080" loading="lazy"></button><figcaption>Fasten the second M2x8 screw joining the USB cover to the hinge. Keep the USB-C male plug aligned.</figcaption></figure>
+<aside class="guide-check"><strong>CHECK</strong><p>Both M2x8 USB-cover screws are fitted, the USB-C male plug is aligned, and the ribbon is not trapped.</p></aside><a class="guide-back" href="#top">Back to top ↑</a></section>
 <section class="section guide-step" id="step-03"><p class="eyebrow">Step 03 / 12</p><h2 class="h2">Route the ribbon and assemble the hinge system</h2>
 <p>Roll the cable excess twice and fit the rolled cable inside the open hollow of the hinge itself (the hinge with USB holder part). </p>
 <p>Then, route the ribbon cable through the back opening of the hinge. Bring the separate hinge right half into position, as shown in the second photo. Slide the ribbon cable through the hinge right half slit on its circular cavity.</p>
@@ -89,11 +126,11 @@
 <aside class="guide-check"><strong>CHECK</strong><p>Both M3x20 screw tips are flush with the hinge top. Neither screw is fully tightened yet.</p></aside><a class="guide-back" href="#top">Back to top ↑</a></section>
 <section class="section guide-step" id="step-05"><p class="eyebrow">Step 05 / 12</p><h2 class="h2">Secure the Main Controller PCB to the back plate</h2>
 <p>Align the Main Controller PCB with the back plate and its mounting holes.</p>
-<p>Use the two M2x4 hex-socket screws to hold the main PCB to the back plate. Fit the first screw, then the second, while keeping the PCB seated at both mounting points.</p>
+<p>Use two M2x4 hex-socket screws to hold the main PCB to the back plate at the leftmost and rightmost pilot bosses. Leave the top pilot boss empty. Keep the PCB seated at both mounting points.</p>
 <figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/05-pcb-backplate-01.jpg" alt="Align the Main Controller PCB and the back plate at their mounting holes." width="1920" height="1080" loading="lazy"></button><figcaption>Align the Main Controller PCB and the back plate at their mounting holes.</figcaption></figure>
 <figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/05-pcb-backplate-02.jpg" alt="Fit the first M2x4 hex-socket screw holding the main PCB to the back plate." width="1920" height="1080" loading="lazy"></button><figcaption>Fit the first M2x4 hex-socket screw holding the main PCB to the back plate.</figcaption></figure>
 <figure class="plate guide-figure"><button class="plate__btn" type="button"><img src="images/assembly/05-pcb-backplate-03.jpg" alt="Fit the second M2x4 hex-socket screw while keeping the PCB seated." width="1920" height="1080" loading="lazy"></button><figcaption>Fit the second M2x4 hex-socket screw while keeping the PCB seated.</figcaption></figure>
-<aside class="guide-check"><strong>CHECK</strong><p>Both M2x4 hex-socket screws are fitted and the PCB lies flat against its mounting points.</p></aside><a class="guide-back" href="#top">Back to top ↑</a></section>
+<aside class="guide-check"><strong>CHECK</strong><p>The two M2x4 screws occupy the leftmost and rightmost pilot bosses, the top boss is empty, and the PCB lies flat.</p></aside><a class="guide-back" href="#top">Back to top ↑</a></section>
 <section class="section guide-step" id="step-06"><p class="eyebrow">Step 06 / 12</p><h2 class="h2">Install the two M3x3 brass threaded inserts</h2>
 <p>Identify the two M3x3 brass threaded inserts and the two holes in the bottom of the controller main body. The two holes are indicated by arrows in the second photo.</p>
 <p>Place the inserts upright in the holes. Use the soldering iron to warm and gently seat the inserts, then allow the body to cool.</p>
