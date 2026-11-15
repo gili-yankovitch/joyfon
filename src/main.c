@@ -31,6 +31,7 @@
 #include <string.h>
 
 #include "pico/stdlib.h"
+#include "pico/bootrom.h"
 #include "tusb.h"
 
 #include "usb_descriptors.h"
@@ -123,6 +124,65 @@ void tud_suspend_cb(bool remote_wakeup_en)
 void tud_resume_cb(void)
 {
   blink_interval_ms = tud_mounted() ? 0 : BLINK_NOT_MOUNTED;
+}
+
+//--------------------------------------------------------------------+
+// BOOTSEL (firmware reflash) gesture
+//--------------------------------------------------------------------+
+
+// Press START + SELECT together this many times, within this window of the
+// first press, to reboot into the ROM USB bootloader for reflashing.
+enum {
+  BOOTSEL_COMBO_PRESSES   = 3,
+  BOOTSEL_COMBO_WINDOW_MS = 2000,
+};
+
+// Watch for the START+SELECT chord being tapped repeatedly. On the Nth tap
+// within the window we hand control back to the RP2040 boot ROM, which
+// re-enumerates as the "RPI-RP2" mass-storage drive so the host can drag a
+// fresh UF2 on. reset_usb_boot() does not return.
+static void bootsel_task(void)
+{
+  static bool     combo_was_down = false;
+  static uint8_t  press_count    = 0;
+  static uint32_t first_press_ms = 0;
+
+  bool combo_down = button_pressed(PIN_START) && button_pressed(PIN_SELECT);
+
+  // Act on the rising edge of the chord (both freshly pressed together).
+  if ( combo_down && !combo_was_down )
+  {
+    uint32_t t = now_ms();
+
+    // Start a new run if this is the first tap or the previous run went stale.
+    if ( press_count == 0 || (t - first_press_ms) > BOOTSEL_COMBO_WINDOW_MS )
+    {
+      press_count    = 1;
+      first_press_ms = t;
+    }
+    else
+    {
+      press_count++;
+    }
+
+    if ( press_count >= BOOTSEL_COMBO_PRESSES )
+    {
+      // Visual confirmation the gesture landed: blink the status LED 5 times.
+      for ( int i = 0; i < 5; i++ )
+      {
+        gpio_put(PIN_LED, 1);
+        sleep_ms(100);
+        gpio_put(PIN_LED, 0);
+        sleep_ms(100);
+      }
+
+      // Reboot into BOOTSEL. Mask 0,0 == default: enable both the USB MSD
+      // interface and the USB activity LED PIN logic the ROM would normally use.
+      reset_usb_boot(0, 0);
+    }
+  }
+
+  combo_was_down = combo_down;
 }
 
 //--------------------------------------------------------------------+
@@ -234,7 +294,7 @@ static void led_task(void)
 
     for ( size_t i = 0; i < sizeof(k_button_pins) / sizeof(k_button_pins[0]); i++ )
     {
-      if ( button_pressed(k_button_pins[i]) ) { /* any = true; */  break; }
+      if ( button_pressed(k_button_pins[i]) ) { /* any = true;  */ break; }
     }
 
     gpio_put(PIN_LED, any);
@@ -263,8 +323,9 @@ int main(void)
 
   while (1)
   {
-    tud_task();   // service the USB device stack
-    hid_task();   // read buttons and send reports
-    led_task();   // status / activity LED
+    tud_task();     // service the USB device stack
+    bootsel_task(); // watch for the START+SELECT reflash gesture
+    hid_task();     // read buttons and send reports
+    led_task();     // status / activity LED
   }
 }
