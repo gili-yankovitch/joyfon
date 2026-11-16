@@ -53,10 +53,11 @@ extern "C" {
 #define CFG_TUD_ENDPOINT0_SIZE    64
 #endif
 
-// Enabled classes: a single HID interface (the gamepad).
+// Composite device: gamepad and flash storage.
 #define CFG_TUD_HID               1
 #define CFG_TUD_CDC               0
-#define CFG_TUD_MSC               0
+#define CFG_TUD_MSC               1
+#define CFG_TUD_MSC_EP_BUFSIZE    4096
 #define CFG_TUD_MIDI              0
 #define CFG_TUD_VENDOR            0
 

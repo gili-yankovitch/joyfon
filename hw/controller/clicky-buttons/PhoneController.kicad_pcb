@@ -1893,7 +1893,8 @@
 			(uuid "65431ec6-f264-4db4-99d7-d1b55ff5fb30")
 		)
 		(embedded_fonts no)
-	)
+	
+)
 	(footprint "TS-1088-AR02016:TS-1088-AR02016"
 		(layer "F.Cu")
 		(uuid "710be7d5-b1f7-486e-88d1-cc508ab9df18")
@@ -2038,7 +2039,8 @@
 			(uuid "c85f184b-adcf-479d-81fb-3aa03f6c718e")
 		)
 		(embedded_fonts no)
-	)
+	
+)
 	(footprint "TS-1088-AR02016:TS-1088-AR02016"
 		(layer "F.Cu")
 		(uuid "cce185f2-f196-4eea-869e-f33dd016c0fa")
@@ -2183,7 +2185,8 @@
 			(uuid "169de7ad-7a6e-4eed-8b5e-c4a397a7b9a8")
 		)
 		(embedded_fonts no)
-	)
+	
+)
 	(footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 		(layer "B.Cu")
 		(uuid "0521a6f9-9e30-40a1-8105-69f8f27c9130")
@@ -2554,7 +2557,19 @@
 			(uuid "4f39c8a5-ebdf-44d1-911b-2239104344d0")
 		)
 		(embedded_fonts no)
-	)
+	
+		(model "${KICAD9_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_Push_SPST_NO_Alps_SKRK.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+)
 	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "B.Cu")
 		(uuid "0a77db48-e76a-4688-b4af-d51e6c267f69")
@@ -6349,7 +6364,19 @@
 			(uuid "6eaf5a53-3584-4474-80ca-122d1d51416d")
 		)
 		(embedded_fonts no)
-	)
+	
+		(model "${KICAD9_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_Push_SPST_NO_Alps_SKRK.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+)
 	(footprint "TS-1088-AR02016:TS-1088-AR02016"
 		(layer "B.Cu")
 		(uuid "59973165-97f0-4eef-9f08-2f4e18a256d7")
@@ -6500,7 +6527,19 @@
 			(uuid "24952a20-ae81-4523-8d60-c2b452f24e39")
 		)
 		(embedded_fonts no)
-	)
+	
+		(model "${KICAD9_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_Push_SPST_NO_Alps_SKRK.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+)
 	(footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 		(layer "B.Cu")
 		(uuid "5b9345f0-3fa8-4be6-80af-b1f16ee5e782")
@@ -6871,7 +6910,19 @@
 			(uuid "8c2280c2-caa5-42e9-8fdf-8fbaef89db37")
 		)
 		(embedded_fonts no)
-	)
+	
+		(model "${KICAD9_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_Push_SPST_NO_Alps_SKRK.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+)
 	(footprint "TS-1088-AR02016:TS-1088-AR02016"
 		(layer "B.Cu")
 		(uuid "65796843-98ca-49a2-9b7c-41d0b56fe96a")
@@ -7022,7 +7073,19 @@
 			(uuid "68c09613-0b14-405f-8b49-f63cad56c755")
 		)
 		(embedded_fonts no)
-	)
+	
+		(model "${KICAD9_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_Push_SPST_NO_Alps_SKRK.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+)
 	(footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 		(layer "B.Cu")
 		(uuid "67ec4e69-3422-4138-a323-7ca6627628e3")
@@ -8492,7 +8555,19 @@
 			(uuid "877c9922-813b-4c8e-8843-53dd9f73609a")
 		)
 		(embedded_fonts no)
-	)
+	
+		(model "${KICAD9_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_Push_SPST_NO_Alps_SKRK.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+)
 	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "B.Cu")
 		(uuid "84fc765d-a7de-468b-96f8-dffeb17545bb")
@@ -9083,7 +9158,19 @@
 			(uuid "0eb30fad-2df0-42a9-b4c6-34865574da16")
 		)
 		(embedded_fonts no)
-	)
+	
+		(model "${KICAD9_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_Push_SPST_NO_Alps_SKRK.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+)
 	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "B.Cu")
 		(uuid "88037c31-b625-4874-875f-897eae7585bd")
@@ -9762,7 +9849,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Value" "5.1k Ohm"
+		(property "Value" "DNP"
 			(at 0 -1.65 90)
 			(layer "B.Fab")
 			(uuid "794d63e3-4a99-4878-b327-ea7ef360cc06")
@@ -11210,7 +11297,19 @@
 			(uuid "4e6ee29b-df7b-4333-a650-eb103405e3ac")
 		)
 		(embedded_fonts no)
-	)
+	
+		(model "${KICAD9_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_Push_SPST_NO_Alps_SKRK.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+)
 	(footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
 		(layer "B.Cu")
 		(uuid "aa34a7f8-84ea-4c0e-8229-492d75570bf5")
@@ -12481,7 +12580,19 @@
 			(uuid "74c710f5-d355-47e8-8990-89ae69636475")
 		)
 		(embedded_fonts no)
-	)
+	
+		(model "${KICAD9_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_Push_SPST_NO_Alps_SKRK.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+)
 	(footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 		(layer "B.Cu")
 		(uuid "cb2fda81-9526-4281-9961-84eb1a4e54ac")
@@ -12850,7 +12961,19 @@
 			(uuid "48bc652e-cc94-4877-918d-d135e86ac97e")
 		)
 		(embedded_fonts no)
-	)
+	
+		(model "${KICAD9_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_Push_SPST_NO_Alps_SKRK.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+)
 	(footprint "TS-1088-AR02016:TS-1088-AR02016"
 		(layer "B.Cu")
 		(uuid "d5c48146-ffca-4dd1-a468-50425d997852")
@@ -13001,7 +13124,19 @@
 			(uuid "a50c98e6-3dd4-4b5c-b2b6-c9854a9d532b")
 		)
 		(embedded_fonts no)
-	)
+	
+		(model "${KICAD9_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_Push_SPST_NO_Alps_SKRK.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+)
 	(footprint "W25Q128JVSIQ:SOIC127P790X216-8N"
 		(layer "B.Cu")
 		(uuid "d8b1b916-068a-4d65-99dc-eae0d94c0ed5")
@@ -14373,7 +14508,19 @@
 			(uuid "13c03084-5fa3-45b2-98a7-ca46f07b49c6")
 		)
 		(embedded_fonts no)
-	)
+	
+		(model "${KICAD9_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_Push_SPST_NO_Alps_SKRK.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+)
 	(footprint "52746-0671:52746-0671"
 		(layer "B.Cu")
 		(uuid "fd92b782-b2ce-417c-8b38-6ac587324c0b")
@@ -14679,7 +14826,7 @@
 			(uuid "c563bc4c-d402-4c69-b9b0-aeca007d5b27")
 		)
 		(embedded_fonts no)
-		(model "${KICAD_USER_3DLIB}/52746-0671/52746-0671.stp"
+		(model "/Users/giliy/kicad/KiCad Libraries/LIB_52746-0671/52746-0671/3D/52746-0671.stp"
 			(offset
 				(xyz 0 0.05999999776 0.01999999925)
 			)

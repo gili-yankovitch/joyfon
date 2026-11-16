@@ -11195,7 +11195,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "5.1k Ohm"
+		(property "Value" "DNP"
 			(at 30.988 158.6921 0)
 			(effects
 				(font

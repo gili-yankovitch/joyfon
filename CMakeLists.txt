@@ -15,20 +15,35 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
 # Initialize the SDK
+set(PICO_FLASH_SIZE_BYTES 16777216)
 pico_sdk_init()
 
 add_executable(joyfon
         src/main.c
         src/usb_descriptors.c
+        src/msc_disk.c
         )
 
+# Keep the storage boundary fixed across firmware updates. The SDK still knows
+# the physical chip is 16 MiB; only the linker's firmware region is restricted.
+set(JOYFON_FIRMWARE_BYTES 262144)
+file(MAKE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/joyfon_flash")
+file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/joyfon_flash/pico_flash_region.ld"
+    "FLASH(rx) : ORIGIN = 0x10000000, LENGTH = ${JOYFON_FIRMWARE_BYTES}\n")
+pico_add_linker_script_override_path(joyfon "${CMAKE_CURRENT_BINARY_DIR}/joyfon_flash" FILES pico_flash_region.ld)
+target_compile_definitions(joyfon PRIVATE
+    PICO_FLASH_SIZE_BYTES=16777216
+    JOYFON_STORAGE_OFFSET=${JOYFON_FIRMWARE_BYTES})
+
 # Make sure TinyUSB can find tusb_config.h
-target_include_directories(joyfon PRIVATE ${CMAKE_CURRENT_LIST_DIR})
+target_include_directories(joyfon PRIVATE ${CMAKE_CURRENT_LIST_DIR} ${CMAKE_CURRENT_LIST_DIR}/src)
 
 # pico_stdlib for GPIO/clocks, tinyusb_device for the USB device stack.
 target_link_libraries(joyfon PRIVATE
         pico_stdlib
         pico_unique_id
+        hardware_flash
+        hardware_sync
         tinyusb_device
         )
 
