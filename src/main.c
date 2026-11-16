@@ -38,6 +38,7 @@
 #include "ds4.h"
 
 void msc_disk_mount(void);
+void msc_disk_init(void);
 
 //--------------------------------------------------------------------+
 // Pin configuration
@@ -321,6 +322,7 @@ static void led_task(void)
 int main(void)
 {
   board_setup();
+  msc_disk_init();
 
   tud_init(BOARD_TUD_RHPORT);
 

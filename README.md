@@ -90,10 +90,17 @@ The linker restricts firmware to the first region and fails if it outgrows it.
 Do not change the storage boundary after putting files on the disk. This build
 targets the **16 MiB custom PCB**, not a standard 2 MiB Raspberry Pi Pico.
 
-On first connection the disk is unformatted. Format the **JoyFon Flash Storage**
-disk as FAT/FAT16 from your computer (not the bootloader's `RPI-RP2` drive).
-No automatic formatting or erasing occurs at startup. The host exclusively owns
-the filesystem; firmware does not mount it. Eject before unplugging or using the
+On first boot, completely erased storage (every byte `0xFF`) is automatically
+initialized as an empty FAT16 volume named **JOYFON**, before USB enumeration.
+No host formatting is needed. This is a single volume starting at disk LBA 0
+(a superfloppy, without an MBR). Existing contents are preserved, including
+unknown or damaged filesystems: an invalid boot signature alone never triggers
+formatting. Previously used but unformatted storage must be formatted manually
+as FAT/FAT16 from the host (not the bootloader's `RPI-RP2` drive).
+Keep power connected during first initialization. If interrupted, partial
+metadata is preserved and may require manual host formatting on the next boot.
+The host exclusively owns the filesystem after initialization; firmware does
+not mount it. Eject before unplugging or using the
 START+SELECT bootloader gesture. Reconnect USB to make an ejected disk available
 again. Normal firmware-only UF2 updates within the reserved region preserve
 storage; full-chip erase tools or other firmware may destroy it.
@@ -109,7 +116,8 @@ The existing Sony VID/PID and HID reports remain in place. Host compatibility,
 especially iOS GameController binding with the additional MSC interface, needs
 testing on hardware.
 
-Suggested hardware checks: enumerate both interfaces; format FAT16; copy and
+Suggested hardware checks: enumerate both interfaces; verify blank flash mounts
+as an empty JOYFON volume without a format prompt; copy and
 read back files while checking buttons; eject/reconnect; power-cycle and verify
 file hashes; install a firmware-only UF2 update and verify the files again.
 
