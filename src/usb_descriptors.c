@@ -292,10 +292,11 @@ uint8_t const * tud_hid_descriptor_report_cb(uint8_t instance)
 enum
 {
   ITF_NUM_HID,
+  ITF_NUM_MSC,
   ITF_NUM_TOTAL
 };
 
-#define CONFIG_TOTAL_LEN  (TUD_CONFIG_DESC_LEN + TUD_HID_INOUT_DESC_LEN)
+#define CONFIG_TOTAL_LEN  (TUD_CONFIG_DESC_LEN + TUD_HID_INOUT_DESC_LEN + TUD_MSC_DESC_LEN)
 
 // Endpoint addresses match the real controller's HID interface.
 #define EPNUM_HID_OUT   0x03
@@ -308,7 +309,8 @@ uint8_t const desc_configuration[] =
 
   // Interface number, string index, protocol, report descriptor len, EP Out, EP In, size, polling interval (ms)
   TUD_HID_INOUT_DESCRIPTOR(ITF_NUM_HID, 0, HID_ITF_PROTOCOL_NONE, sizeof(desc_hid_report),
-                           EPNUM_HID_OUT, EPNUM_HID_IN, CFG_TUD_HID_EP_BUFSIZE, 5)
+                           EPNUM_HID_OUT, EPNUM_HID_IN, CFG_TUD_HID_EP_BUFSIZE, 5),
+  TUD_MSC_DESCRIPTOR(ITF_NUM_MSC, 0, 0x01, 0x81, 64)
 };
 
 // Invoked when received GET CONFIGURATION DESCRIPTOR

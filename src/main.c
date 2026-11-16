@@ -37,6 +37,8 @@
 #include "usb_descriptors.h"
 #include "ds4.h"
 
+void msc_disk_mount(void);
+
 //--------------------------------------------------------------------+
 // Pin configuration
 //--------------------------------------------------------------------+
@@ -107,6 +109,7 @@ static void board_setup(void)
 
 void tud_mount_cb(void)
 {
+  msc_disk_mount();
   blink_interval_ms = 0; // application now controls the LED
 }
 

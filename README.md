@@ -75,6 +75,50 @@ when the button state changes, keeping latency low and the bus quiet.
 
 ## Building
 
+### USB flash storage
+
+The custom controller PCB uses a W25Q128 (128 Mbit = 16 MiB) flash chip.
+Firmware now exposes both the existing DualShock 4 HID interface and a writable
+USB mass-storage interface. The flash layout is fixed:
+
+| Flash offsets | Use |
+| --- | --- |
+| `0x000000` - `0x03FFFF` | 256 KiB reserved for firmware |
+| `0x040000` - `0xFFFFFF` | 15.75 MiB storage (32,256 blocks of 512 bytes) |
+
+The linker restricts firmware to the first region and fails if it outgrows it.
+Do not change the storage boundary after putting files on the disk. This build
+targets the **16 MiB custom PCB**, not a standard 2 MiB Raspberry Pi Pico.
+
+On first connection the disk is unformatted. Format the **JoyFon Flash Storage**
+disk as FAT/FAT16 from your computer (not the bootloader's `RPI-RP2` drive).
+No automatic formatting or erasing occurs at startup. The host exclusively owns
+the filesystem; firmware does not mount it. Eject before unplugging or using the
+START+SELECT bootloader gesture. Reconnect USB to make an ejected disk available
+again. Normal firmware-only UF2 updates within the reserved region preserve
+storage; full-chip erase tools or other firmware may destroy it.
+
+Writes are synchronous, preserve surrounding bytes in each 4 KiB erase sector,
+and disable interrupts while flash is being erased/programmed. HID reporting
+therefore pauses during writes. There is no wear leveling or power-loss journal:
+avoid frequent logging, and disconnecting during a write can lose a whole erase
+sector. The driver assumes core 1 remains unused. Adding a second core requires
+flash lockout synchronization.
+
+The existing Sony VID/PID and HID reports remain in place. Host compatibility,
+especially iOS GameController binding with the additional MSC interface, needs
+testing on hardware.
+
+Suggested hardware checks: enumerate both interfaces; format FAT16; copy and
+read back files while checking buttons; eject/reconnect; power-cycle and verify
+file hashes; install a firmware-only UF2 update and verify the files again.
+
+Host tests exercise the actual storage callbacks with simulated NOR flash:
+run `python tests/test_msc.py` from a Visual Studio developer prompt, or
+`python tests/test_msc.py --cc gcc` with a native GCC compiler.
+
+### Toolchain
+
 This project expects the [pico-sdk](https://github.com/raspberrypi/pico-sdk).
 By default `CMakeLists.txt` looks for it at `../pico-sdk` (a sibling of this
 folder). You can override that with the `PICO_SDK_PATH` environment variable.
